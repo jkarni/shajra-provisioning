@@ -36,11 +36,11 @@ ARGS=()
 print_usage()
 {
     cat - <<EOF
-USAGE: ${progName} [OPTION]... [--] NIXOS_REBUILD_ARGS...
+USAGE: ${progName} [OPTION]... [--] HOME_MANAGER_ARGS...
 
 DESCRIPTION:
 
-    A wrapper of home-manager that heavily controls envioronment
+    A wrapper of home-manager that heavily controls environment
     variables, including NIX_PATH.  Unrecognized switches and
     arguments are passed through to home-manager.
 

@@ -89,7 +89,7 @@ Enabled by this approach, there's a battery of checking done by configuration mo
 
 Beyond a few switches parsed by these wrapper scripts, the rest of the arguments are passed through to the respective upstream program. If you're already familiar with these tools there shouldn't be too many surprises.
 
-Something important these wrapper scripts do is highly restrict sensitivity to environment variables on your path that might affect how tools provision. If you look within these scripts, you'll see this illustrated by the `--ignore-enviornment` switch, which clears out environment variables.
+Something important these wrapper scripts do is highly restrict sensitivity to environment variables on your path that might affect how tools provision. If you look within these scripts, you'll see this illustrated by the `--ignore-environment` switch, which clears out environment variables.
 
 Because environment variables like `NIX_PATH` are ignored completely, and rebuilt internally, we can avoid all the extra steps otherwise needed to set them up. Additionally, independence from the caller's environment improves the repeatability and precision of our provisioning.
 

@@ -129,7 +129,7 @@ familiar with these tools there shouldn't be too many surprises.
 Something important these wrapper scripts do is highly restrict sensitivity to
 environment variables on your path that might affect how tools provision. If you
 look within these scripts, you'll see this illustrated by the
-=--ignore-enviornment= switch, which clears out environment variables.
+=--ignore-environment= switch, which clears out environment variables.
 
 Because environment variables like =NIX_PATH= are ignored completely, and
 rebuilt internally, we can avoid all the extra steps otherwise needed to set
