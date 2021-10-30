@@ -193,7 +193,7 @@ let
                 package = pkgs.nerdfonts;
             };
             proportional = {
-                name = "Source Serif Variable";
+                name = "Source Serif 4 Variable";
                 package = pkgs.source-serif-pro;
             };
         };

@@ -41,7 +41,7 @@ in
         ];
         terminal = kitty-exe;
         window = {
-            border = 4;
+            border = 3;
             titlebar = false;
         };
     };
