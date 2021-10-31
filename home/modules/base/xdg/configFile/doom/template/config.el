@@ -101,4 +101,5 @@
       (org-indent-mode)))
 
 ;; DESIGN: some configuration is more personal...
-(load! "config" "~/.config/doom-private" t)
+(load! "managed" "~/.config/doom-local" t)
+(load! "unmanaged" "~/.config/doom-local" t)

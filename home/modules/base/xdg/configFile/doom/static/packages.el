@@ -7,7 +7,6 @@
 ;; (package! builtin-package :disable t)
 ;; (package! some-package :recipe (:local-repo "path/to/repo"))
 
-(package! f)
 
 ;; DESIGN: https://www.reddit.com/r/DoomEmacs/comments/q9njsv/folks_on_a_recent_commit_of_emacs_28_are_seeing/
 ;; Feel this was fixed with a GCC Emacs upgrade.
