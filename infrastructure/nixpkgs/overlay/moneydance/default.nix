@@ -6,11 +6,11 @@
 
 self: super:
 
-let 
+let
 
     moneydance-lib = super.stdenv.mkDerivation rec {
         pname = "moneydance-lib";
-        version = "2022_4058";
+        version = "2022_4060";
         name = "${pname}-${version}";
         src = super.moneydance-dist;
         phases = [ "installPhase" ];
