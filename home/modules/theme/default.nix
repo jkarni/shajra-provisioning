@@ -189,7 +189,7 @@ let
                 package = pkgs.nerdfonts;
             };
             monospaced.serif = {
-                name = "LiterationSerif Nerd Font Mono";
+                name = "NotoSerif Nerd Font Mono";
                 package = pkgs.nerdfonts;
             };
             proportional = {

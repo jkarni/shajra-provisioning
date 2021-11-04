@@ -27,7 +27,7 @@ in
             offset = "24x78";
             horizontal_padding = 12;
             markup = "full";
-            max_icon_size = 24;
+            max_icon_size = 48;
             min_icon_size = 24;
             mouse_left_click = "close_current";
             mouse_middle_click = "close_all";
