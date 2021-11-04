@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: cachix/install-nix-action@v16
       with:
         extra_nix_config: |
+          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -47,9 +48,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: cachix/install-nix-action@v16
       with:
         extra_nix_config: |
+          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -78,9 +80,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: cachix/install-nix-action@v16
       with:
         extra_nix_config: |
+          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -91,7 +94,7 @@ jobs:
     - run: cat ~/.config/nix/nix.conf
     - run: |
         NIX_PATH=nixos=channel:nixos-21.05 \
-        nix run nixos.nixos-rebuild \
+        nix shell nixos.nixos-rebuild \
             --command ./nixos-rebuild --target hole        build
     - run:            ./home-manager  --target hole --slim build
   installers-darwin:
@@ -100,9 +103,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v14
+    - uses: cachix/install-nix-action@v16
       with:
         extra_nix_config: |
+          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
