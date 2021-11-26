@@ -76,6 +76,10 @@ in {
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "shajra.cachix.org-1:V0x7Wjgd/mHGk2KQwzXv8iydfIgLupbnZKLSQt5hh9o="
     ];
+    nix.extraOptions = ''
+        experimental-features = nix-command
+    '';
+    nix.package = pkgs.nixFlakes;
     nix.trustedUsers = [ "root" "tnks" ];
     nix.useSandbox = "relaxed";
 

@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")"
 
-nix run \
+nix shell \
     --ignore-environment \
     --keep DBUS_SESSION_BUS_ADDRESS \
     --keep HOME \

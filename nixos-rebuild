@@ -2,7 +2,7 @@
 
 cd "$(dirname "$0")"
 
-nix run \
+nix shell \
     --ignore-environment \
     --file . \
     infra.np.nixpkgs-stable.shajra-nixos-rebuild \
