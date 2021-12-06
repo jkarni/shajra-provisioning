@@ -13,6 +13,7 @@
         "homebrew/cask-fonts"
         "homebrew/core"
         "homebrew/services"
+        "koekeishiya/formulae"
     ];
 
     brews = [
@@ -38,4 +39,7 @@
         "zoom"
     ];
 
+    extraConfig = ''
+        brew "koekeishiya/formulae/yabai", args: ["HEAD"], restart_service: :changed
+    '';
 }

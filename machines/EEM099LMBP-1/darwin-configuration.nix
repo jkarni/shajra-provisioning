@@ -8,7 +8,7 @@ in
 
 {
     environment.etc."sudoers.d/yabai".text = ''
-        sukant ALL = (root) NOPASSWD: ${pkgs.yabai}/bin/yabai --load-sa
+        #sukant ALL = (root) NOPASSWD: ${pkgs.yabai}/bin/yabai --load-sa
     '';
 
     environment.systemPackages = [];
@@ -42,7 +42,7 @@ in
     services.nix-daemon.enable = true;
     services.skhd.enable = true;
     services.skhd.package = pkgs.skhd;
-    services.yabai.enable = true;
+    services.yabai.enable = false;
     services.yabai.package = pkgs.yabai;
 
     system.activationScripts.postUserActivation.text = ''

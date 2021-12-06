@@ -157,7 +157,8 @@ let
         emacsMacport
         shajra-darwin-rebuild
         skhd
-        yabai;
+        #yabai
+        ;
     };
 
     nixpkgs.build.common.haskell = {}

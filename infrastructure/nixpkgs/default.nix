@@ -21,7 +21,20 @@ let
             src = sources.home-manager;
         });
         skhd = super.skhd.overrideAttrs (old: { src = sources.skhd; });
-        yabai = super.yabai.overrideAttrs (old: { src = sources.yabai; });
+        #yabai = super.yabai.overrideAttrs (old: {
+        #    src = sources.yabai;
+        #    postPatch = ''
+        #        substituteInPlace makefile --replace \
+        #            ' -arch arm64e ' \
+        #            ' '
+        #        #substituteInPlace makefile --replace \
+        #        #    ' -arch arm64' \
+        #        #    ""
+        #        substituteInPlace makefile --replace \
+        #            'xcrun clang ' \
+        #            "clang "
+        #    '';
+        #});
         moneydance-dist = sources.moneydance;
         dircolors-solarized = sources.dircolors-solarized;
     };
