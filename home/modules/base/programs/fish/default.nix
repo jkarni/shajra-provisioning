@@ -82,15 +82,16 @@ in
                 let linuxOnly = "--hide Resolution --long-shell";
                     platformSpecific = if isDarwin then "" else linuxOnly;
                 in ''
-                "${pkgs.macchina}/bin/macchina" \
-                    ${platformSpecific} \
-                    --color Yellow \
-                    --no-title \
-                    --spacing 1 \
-                    --no-ascii \
-                    --bar \
-                    --no-bar-delimiter \
-                    --no-box
+                # DESIGN: Macchina options regressed
+                # "${pkgs.macchina}/bin/macchina" \
+                #     ${platformSpecific} \
+                #     --color Yellow \
+                #     --no-title \
+                #     --spacing 1 \
+                #     --no-ascii \
+                #     --bar \
+                #     --no-bar-delimiter \
+                #     --no-box
                 "${pkgs.coreutils}/bin/cat" "${./color_bars.txt}"
             '';
         };

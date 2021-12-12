@@ -77,7 +77,7 @@ in {
         "shajra.cachix.org-1:V0x7Wjgd/mHGk2KQwzXv8iydfIgLupbnZKLSQt5hh9o="
     ];
     nix.extraOptions = ''
-        experimental-features = nix-command
+        experimental-features = nix-command flakes
     '';
     nix.package = pkgs.nixFlakes;
     nix.trustedUsers = [ "root" "tnks" ];
