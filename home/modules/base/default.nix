@@ -7,7 +7,7 @@ let
     sources = build.sources;
     module-lorelei = (import sources.direnv-nix-lorelei).direnv-nix-lorelei-home;
     prunedPkgs = builtins.removeAttrs build.pkgs [
-        "emacsGcc"      # DESIGN: prebuilt, but passed in programs.emacs.package
+        "emacsGit"      # DESIGN: prebuilt, but passed in programs.emacs.package
         "emacsMacport"  # DESIGN: prebuilt, but passed in programs.emacs.package
     ];
     selectedPkgs =
