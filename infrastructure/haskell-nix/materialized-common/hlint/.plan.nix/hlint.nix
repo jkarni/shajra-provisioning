@@ -11,7 +11,7 @@
     flags = { threaded = true; gpl = true; ghc-lib = false; hsyaml = false; };
     package = {
       specVersion = "1.18";
-      identifier = { name = "hlint"; version = "3.3.4"; };
+      identifier = { name = "hlint"; version = "3.3.5"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2021";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -48,7 +48,6 @@
     components = {
       "library" = {
         depends = (([
-          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -141,6 +140,7 @@
           "Hint/Smell"
           "Hint/Type"
           "Hint/Unsafe"
+          "Hint/NumLiteral"
           "Test/All"
           "Test/Annotations"
           "Test/InputOutput"

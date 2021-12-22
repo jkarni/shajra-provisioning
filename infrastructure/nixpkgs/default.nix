@@ -17,8 +17,50 @@ let
             url = sources.hasklig.url;
             sha256 = sources.hasklig.sha256;
         });
-        home-manager = super.home-manager.overrideAttrs (old: {
+        home-manager = super.home-manager.overrideAttrs (old: rec {
+            # DESIGN: from home-manager/home-manager/default.nix
             src = sources.home-manager;
+            nativeBuildInputs = old.nativeBuildInputs ++ [self.gettext];
+            installPhase = ''
+                install -v -D -m755 \
+                    ${src}/home-manager/home-manager \
+                    $out/bin/home-manager
+
+                substituteInPlace $out/bin/home-manager \
+                    --subst-var-by bash "${self.bash}" \
+                    --subst-var-by DEP_PATH "${
+                        self.lib.makeBinPath [
+                            self.coreutils
+                            self.findutils
+                            self.gettext
+                            self.gnused
+                            self.less
+                            self.ncurses
+                            self.nixos-option
+                        ]
+                    }" \
+                    --subst-var-by HOME_MANAGER_LIB '${src}/lib/bash/home-manager.sh' \
+                    --subst-var-by HOME_MANAGER_PATH '${src}' \
+                    --subst-var-by OUT "$out" \
+
+                install -D -m755 home-manager/completion.bash \
+                    "$out/share/bash-completion/completions/home-manager"
+                install -D -m755 home-manager/completion.zsh \
+                    "$out/share/zsh/site-functions/_home-manager"
+                install -D -m755 home-manager/completion.fish \
+                    "$out/share/fish/vendor_completions.d/home-manager.fish"
+
+                install -D -m755 lib/bash/home-manager.sh \
+                    "$out/share/bash/home-manager.sh"
+
+                for path in home-manager/po/*.po
+                do
+                    lang="''${path##*/}"
+                    lang="''${lang%%.*}"
+                    mkdir -p "$out/share/locale/$lang/LC_MESSAGES"
+                    msgfmt -o "$out/share/locale/$lang/LC_MESSAGES/home-manager.mo" "$path"
+                done
+            '';
         });
         skhd = super.skhd.overrideAttrs (old: { src = sources.skhd; });
         #yabai = super.yabai.overrideAttrs (old: {

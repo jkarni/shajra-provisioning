@@ -28,7 +28,10 @@ in
         inherit modifier;
         bars = import ./bars.nix i3status-exe i3status-conf colors foreground fontName;
         colors = import ./colors.nix colors;
-        fonts = ["${fontName} 9"];
+        fonts = {
+            names = ["${fontName}"];
+            size = 9.0;
+        };
         gaps = import ./gaps.nix;
         floating.criteria = [ { class = "Pavucontrol"; } ];
         keybindings = import ./keybindings.nix

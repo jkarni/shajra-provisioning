@@ -1,7 +1,10 @@
 i3status-exe: i3status-conf: colors: foreground: fontName:
 
 [{
-    fonts = ["Material Icons 20" "${fontName} 9"];
+    fonts = {
+        names = [ "${fontName}" ];
+        size = 9.0;
+    };
     statusCommand = "${i3status-exe} ${i3status-conf}";
     colors = {
         statusline = colors.semantic.foreground;
