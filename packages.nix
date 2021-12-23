@@ -102,6 +102,7 @@ let
         "fontpreview"
         "freemind"
         "fswatch"
+        "gcc"
         "gnome3.adwaita-icon-theme"
         "inkscape"
         "irccloud"
