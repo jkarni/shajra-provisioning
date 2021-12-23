@@ -3,7 +3,7 @@ pkgs:
 {
     enable = true;
 
-    package = pkgs.emacsGit;
+    package = pkgs.emacsGcc;
 
     extraPackages = epkgs: with epkgs; [
         emacsql

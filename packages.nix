@@ -134,7 +134,7 @@ let
     ];
 
     nixpkgs.build.common.home = pickHome [
-        #"emacsGit"  # DESIGN: prebuilt/cached for Linux, but not Darwin
+        #"emacsGcc"  # DESIGN: prebuilt/cached for Linux, but not Darwin
         "global"
         "hasklig"
         "notify-time"
@@ -144,7 +144,7 @@ let
     nixpkgs.build.ifLinux.unstable = when (! isDarwin) {
         inherit (np.nixpkgs-unstable)
         dunst-osd
-        emacsGit
+        emacsGcc
         i3-dpi
         i3-workspace-name
         i3status-rust-dunst
