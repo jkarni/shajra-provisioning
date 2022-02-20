@@ -5,7 +5,7 @@ let
     i3msg-exe  = "${config.xsession.windowManager.i3.package}/bin/i3-msg";
     i3status-exe  = "${config.programs.i3status-rust.package}/bin/i3status-rs";
     kitty-exe = "${pkgs.kitty}/bin/kitty";
-    setroot-exe  = "${pkgs.setroot}/bin/setroot";
+    hsetroot-exe  = "${pkgs.hsetroot}/bin/hsetroot";
     i3-conf = "${config.xdg.configHome}/i3status-rust/config-bottom.toml";
     i3status-conf = "${config.xdg.configHome}/i3status-rust/config-bottom.toml";
     runOnce = cmd: { command = cmd; always = false; notification = false; };
@@ -40,7 +40,7 @@ in
         startup = [
             (runOnce "${i3msg-exe} workspace 1")
             (runOnce "${autorandr-exe} --change --default home")
-            (runOnce "${setroot-exe} --solid-color '${colors.semantic.background}'")
+            (runOnce "${hsetroot-exe} -solid '${colors.semantic.background}'")
         ];
         terminal = kitty-exe;
         window = {

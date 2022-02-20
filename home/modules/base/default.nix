@@ -49,9 +49,10 @@ in
         programs.broot = import programs/broot config pkgs;
         programs.dircolors.enable = true;
         programs.dircolors.extraConfig = config.theme.external.dircolors.extraConfig;
-        programs.direnv.enableFishIntegration = false;
-        programs.direnv.enableBashIntegration = false;
-        programs.direnv.enable = true;
+        # DESIGN: Not using the Direnv module because Home Manager automatically
+        # integrates Fish with Direnv in a way that's hard to override, and I
+        # have my own preferred Direnv integration scripts for Fish.
+        programs.direnv.enable = false;
         programs.direnv-nix-lorelei.enable = true;
         programs.emacs = import programs/emacs pkgs;
         programs.feh.enable = true;

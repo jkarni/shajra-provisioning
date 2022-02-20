@@ -39,8 +39,7 @@ let
             compiler-nix-name = ghcVersion;
             ${if isNull index-state then null else "index-state"} = index-state;
             ${if isNull index-sha256 then null else "index-sha256"} = index-sha256;
-            lookupSha256 = {location, ...}:
-                infraConfig.haskell-nix.lookupSha256."${location}" or null;
+            sha256map = infraConfig.haskell-nix.sha256map or {};
         };
 
     hackagePlanConfigFor = ghcVersion: name: modules:

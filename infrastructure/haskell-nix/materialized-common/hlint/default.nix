@@ -38,8 +38,7 @@
         "yaml".flags.no-exe = true;
         "assoc".revision = (((hackage."assoc")."1.0.2").revisions).default;
         "data-fix".revision = (((hackage."data-fix")."0.3.2").revisions).default;
-        "alex".revision = (((hackage."alex")."3.2.6").revisions).default;
-        "alex".flags.small_base = true;
+        "alex".revision = (((hackage."alex")."3.2.7.1").revisions).default;
         "old-locale".revision = (((hackage."old-locale")."1.0.0.7").revisions).default;
         "mtl".revision = (((hackage."mtl")."2.2.2").revisions).default;
         "OneTuple".revision = (((hackage."OneTuple")."0.3.1").revisions).default;
@@ -56,7 +55,7 @@
         "splitmix".revision = (((hackage."splitmix")."0.1.0.4").revisions).default;
         "splitmix".flags.optimised-mixer = false;
         "file-embed".revision = (((hackage."file-embed")."0.0.15.0").revisions).default;
-        "attoparsec".revision = (((hackage."attoparsec")."0.14.3").revisions).default;
+        "attoparsec".revision = (((hackage."attoparsec")."0.14.4").revisions).default;
         "attoparsec".flags.developer = false;
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
         "libyaml".revision = (((hackage."libyaml")."0.1.2").revisions).default;
@@ -95,7 +94,7 @@
         "vector-algorithms".flags.unsafechecks = false;
         "vector-algorithms".flags.bench = true;
         "th-abstraction".revision = (((hackage."th-abstraction")."0.4.3.0").revisions).default;
-        "semigroupoids".revision = (((hackage."semigroupoids")."5.3.6").revisions).default;
+        "semigroupoids".revision = (((hackage."semigroupoids")."5.3.7").revisions).default;
         "semigroupoids".flags.tagged = true;
         "semigroupoids".flags.containers = true;
         "semigroupoids".flags.distributive = true;
@@ -113,7 +112,7 @@
         "primitive".revision = (((hackage."primitive")."0.7.3.0").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.6.0").revisions).default;
         "exceptions".revision = (((hackage."exceptions")."0.10.4").revisions).default;
-        "clock".revision = (((hackage."clock")."0.8.2").revisions).default;
+        "clock".revision = (((hackage."clock")."0.8.3").revisions).default;
         "clock".flags.llvm = false;
         "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.0.0.6").revisions).default;
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
@@ -132,7 +131,7 @@
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
         "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.1").revisions).default;
         "ansi-terminal".flags.example = false;
-        "hashable".revision = (((hackage."hashable")."1.4.0.1").revisions).default;
+        "hashable".revision = (((hackage."hashable")."1.4.0.2").revisions).default;
         "hashable".flags.containers = true;
         "hashable".flags.random-initial-seed = false;
         "hashable".flags.integer-gmp = true;
@@ -281,6 +280,7 @@
           "uniplate".components.library.planned = lib.mkOverride 900 true;
           "mtl".components.library.planned = lib.mkOverride 900 true;
           "th-abstraction".components.library.planned = lib.mkOverride 900 true;
+          "attoparsec".components.sublibs."attoparsec-internal".planned = lib.mkOverride 900 true;
           "transformers".components.library.planned = lib.mkOverride 900 true;
           "OneTuple".components.library.planned = lib.mkOverride 900 true;
           "cpphs".components.exes."cpphs".planned = lib.mkOverride 900 true;

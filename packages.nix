@@ -28,7 +28,7 @@ let
         "cmake"
         "coreutils"
         "curl"
-        "dhall"
+        "direnv"
         "exa"
         "fd"
         "file"
@@ -94,7 +94,7 @@ let
         linux = "unstable";
     } [
         "ansifilter"
-        "chromium"  # TODO: home-manager
+        "ungoogled-chromium"  # TODO: home-manager
         "dfu-programmer"
         "dfu-util"
         "discord"
