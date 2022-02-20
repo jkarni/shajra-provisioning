@@ -9,7 +9,7 @@
 (when (featurep! +dante)
   ;; DESIGN: target latest for both
   (package! dante :pin "8741419333fb85ed2c1d71f5902688f5201b0a40")
-  (package! attrap :pin "12b06e076689f9b85f2d247b80779b98efb4daa4"))
+  (package! attrap :pin "19a520ecb99529790906a1fb5599acdf2b4f005f"))
 
 (when (and (featurep! +lsp) (not (featurep! :tools lsp +eglot)))
   ;; DESIGN: match Doom

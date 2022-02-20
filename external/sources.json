@@ -65,10 +65,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "ad63172bd9586ab081f69df04f5526a0bfe50bd8",
-        "sha256": "1ffc13d09kzvwaxx6zrf075gs2izbk00sm7l70jn5gjprcy51xbm",
+        "rev": "786f173b3214e56bbd1f06a32ca4d3ac670b1a2a",
+        "sha256": "13vsms9wm3q5yr1s0d7aylp75l2nr2sismcplvb16a3ry17wz08g",
         "type": "tarball",
-        "url": "https://github.com/nix-community/emacs-overlay/archive/ad63172bd9586ab081f69df04f5526a0bfe50bd8.tar.gz",
+        "url": "https://github.com/nix-community/emacs-overlay/archive/786f173b3214e56bbd1f06a32ca4d3ac670b1a2a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fzf.fish": {
@@ -113,10 +113,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "31a8266cce50355596189c42d54f5be612ed9394",
-        "sha256": "1n73mvbys91k8l1ngrv858npg739za0jkwdp9hsd787j46am3w4v",
+        "rev": "668c075003d3d26b010b3abad9fedfe10c12d4a8",
+        "sha256": "1mqnxh5xhjd883dpnizizf0xzyajfan32d7nbbjb30p47k6jpmrm",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/31a8266cce50355596189c42d54f5be612ed9394.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/668c075003d3d26b010b3abad9fedfe10c12d4a8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hasklig": {
@@ -132,10 +132,10 @@
         "homepage": "https://nix-community.github.io/home-manager/",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4f4165a8b9108818ab0193bbd1a252106870b2a2",
-        "sha256": "0wbqj7ickar186svykqijrbq8aj7wkyjydmsvwwi4b4340np6cjr",
+        "rev": "0232fe1b75e6d7864fd82b5c72f6646f87838fc3",
+        "sha256": "15c12f48s38pvp8dskpvsdd82ndqvsjdkfml5mzry5cjmivq5cm3",
         "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/4f4165a8b9108818ab0193bbd1a252106870b2a2.tar.gz",
+        "url": "https://github.com/nix-community/home-manager/archive/0232fe1b75e6d7864fd82b5c72f6646f87838fc3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "moneydance": {
@@ -211,10 +211,10 @@
         "homepage": "https://nur.nix-community.org/",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b3ff66122675c1f8e1e350561f4786709f9fba3c",
-        "sha256": "08ldirvkz1hdkmgf43caxalwy4x8fjirm2s2p09kr12axp8374jn",
+        "rev": "a49f87e5f79d1133eab0e489d85d45ed340faa49",
+        "sha256": "04z7myw886dj62p6vm45h71kjdb8lnjxnalyp09k26vldz4zfa0n",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/b3ff66122675c1f8e1e350561f4786709f9fba3c.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/a49f87e5f79d1133eab0e489d85d45ed340faa49.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pointless-xcompose": {
