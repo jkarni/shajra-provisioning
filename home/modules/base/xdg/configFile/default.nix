@@ -29,6 +29,7 @@ in
     } ''
         rsync --archive "${doom.template}/" "${./doom/static}/" "$out"
     '';
+    "fish/completions/devour.fish".source = fish/completions/devour.fish;
     "fish/completions/notify-time.fish".source = fish/completions/notify-time.fish;
     "fish/conf.d/direnv.fish".text = pkgs.callPackage fish/direnv.nix { cacheHome = config.xdg.cacheHome; };
     "fish/set-universal.fish".onChange = import fish/onChange.nix config;
