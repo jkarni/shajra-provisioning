@@ -211,4 +211,7 @@ in
 
     # screen capture
     "${mod}+Control+s" = ''exec ${maim-select}'';
+
+    # kill frame with mouse click on titlebar
+    "button2" = ''--release kill'';
 }
