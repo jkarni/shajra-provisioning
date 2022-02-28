@@ -3,6 +3,7 @@
 let
 
     infra = (import ../.. {}).infra;
+    hplip = infra.np.nixpkgs-unstable.hplipWithPlugin;
 
 in {
 
@@ -26,7 +27,7 @@ in {
 
     environment.systemPackages = with pkgs; [
         # DESIGN: specific to hardware
-        hplipWithPlugin
+        hplip
         lan-jelly
     ];
 
@@ -40,7 +41,7 @@ in {
     hardware.pulseaudio.enable = true;
     hardware.pulseaudio.daemon.config = { enable-deferred-volume = "no"; };
     hardware.sane.enable = true;
-    hardware.sane.extraBackends = [ pkgs.gutenprint pkgs.hplipWithPlugin ];
+    hardware.sane.extraBackends = [ pkgs.gutenprint hplip ];
     #hardware.bumblebee.enable = true;
     #hardware.bumblebee.connectDisplay = true;
 
@@ -114,7 +115,7 @@ in {
     services.openssh.enable = false;
     services.openssh.extraConfig = ''UseDNS no'';
     services.openssh.ports = [];   # put a port here when using
-    services.printing.drivers = [ pkgs.hplipWithPlugin ];
+    services.printing.drivers = [ hplip ];
     services.printing.enable = true;
     services.tlp.enable = true;
     services.upower.enable = true;
