@@ -6,7 +6,7 @@
         "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
         "regex-posix".revision = (((hackage."regex-posix")."0.96.0.1").revisions).default;
         "regex-posix".flags._regex-posix-clib = false;
-        "unordered-containers".revision = (((hackage."unordered-containers")."0.2.16.0").revisions).default;
+        "unordered-containers".revision = (((hackage."unordered-containers")."0.2.17.0").revisions).default;
         "unordered-containers".flags.debug = false;
         "integer-logarithms".revision = (((hackage."integer-logarithms")."1.0.3.1").revisions).default;
         "integer-logarithms".flags.check-bounds = false;
@@ -15,7 +15,7 @@
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
         "text".revision = (((hackage."text")."1.2.4.1").revisions).default;
-        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."8.10.7.20210828").revisions).default;
+        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."8.10.7.20220219").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
         "vector".revision = (((hackage."vector")."0.12.3.1").revisions).default;
         "vector".flags.internalchecks = false;

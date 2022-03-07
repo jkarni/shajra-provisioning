@@ -10,7 +10,7 @@ nix shell \
     --keep TERMINFO \
     --keep USER \
     --file . \
-    infra.np.nixpkgs-stable.shajra-home-manager \
+    infra.np.nixpkgs-unstable.shajra-home-manager \
     --command \
     shajra-home-manager \
     --nix "$(command -v nix)" \

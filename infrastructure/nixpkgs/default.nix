@@ -11,7 +11,12 @@ let
     #};
 
     overlay.emacs = import sources.emacs-overlay;
-    overlay.nix-project = self: super: import sources.nix-project;
+    overlay.nix-project = self: super:
+        let system = super.stdenv.system;
+        in {
+            nix-project-lib =
+                (import sources.nix-project).lib."${system}".scripts;
+        };
     overlay.upgrades = self: super: {
         hasklig = super.hasklig.overrideAttrs (old: {
             url = sources.hasklig.url;
@@ -84,8 +89,8 @@ let
     overlay.provided = import ./overlay;
 
     overlays = with overlay; [
-        emacs
         nix-project
+        emacs
         upgrades
         provided
     ];

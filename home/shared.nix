@@ -1,7 +1,7 @@
 {
-   "EEM099LMBP-1" = rec {
+   "s-MacBookPro.local" = rec {
       homeDirectory = "/Users/${username}";
-      username = "sukant";
+      username = "shajra";
    };
    hole = rec {
       homeDirectory = "/home/${username}";

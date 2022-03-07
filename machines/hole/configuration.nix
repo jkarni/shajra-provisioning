@@ -4,6 +4,7 @@ let
 
     infra = (import ../.. {}).infra;
     hplip = infra.np.nixpkgs-unstable.hplipWithPlugin;
+    hostname = "hole";
 
 in {
 
@@ -56,7 +57,7 @@ in {
         fi
     '';
     networking.search = [ "hajra.xyz" "local" "home.arpa" ];
-    networking.hostName = "hole";
+    networking.hostName = hostname;
     networking.wireless.enable = true;
     networking.wireless.allowAuxiliaryImperativeNetworks = true;
     networking.wireless.interfaces = [ "wlp6s0" ];

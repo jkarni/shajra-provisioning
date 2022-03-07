@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 nix shell \
     --ignore-environment \
     --file . \
-    infra.np.nixpkgs-stable.shajra-darwin-rebuild \
+    infra.np.nixpkgs-unstable.shajra-darwin-rebuild \
     --command \
     shajra-darwin-rebuild \
     --nix "$(command -v nix)" \

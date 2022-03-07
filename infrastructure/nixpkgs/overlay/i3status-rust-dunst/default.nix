@@ -20,7 +20,7 @@ set -eu
 set -o pipefail
 
 
-. "${self.nix-project-lib.common}/share/nix-project/common.bash"
+. "${self.nix-project-lib.scriptCommon}/share/nix-project/common.bash"
 
 
 # DESIGN: intentionally letting dbus-send come in from /run/current-system.

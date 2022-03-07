@@ -18,7 +18,7 @@ let
     gitIgnores =
         # DESIGN: believe Nixpkgs has a bug processing this special case
         (map (builtins.replaceStrings ["\\#"] ["[#]"])
-        (import home/modules/base/programs/git null).ignores)
+        (import home/modules/base/tui/all/programs/git null).ignores)
         ++ ["*.org" "*.md"];
 
     sources =
@@ -34,21 +34,23 @@ let
         isDevBuild = config.build.dev;
     };
 
-    myPkgs = import ./packages.nix infra;
-    updateMaterialized = myPkgs.haskell-nix.updateMaterialized;
+    pkgsBuild = import ./packages.nix infra;
+    updateMaterialized = pkgsBuild.categorized.sets.updateMaterialized;
 
     includeSet = bs: buildSet == bs || buildSet == "all";
     includeInfra = i: buildInfrastructure == i || buildInfrastructure == "all";
-    include = bs: i: ps:
-        if includeSet bs && includeInfra i then ps else {};
+    include = bs: i:
+        if includeSet bs && includeInfra i
+        then pkgsBuild."${bs}"."${i}"
+        else {};
 
-    selectedPkgs =
-        (   include "prebuilt" "nixpkgs"     myPkgs.nixpkgs.prebuilt)
-        // (include "prebuilt" "haskell-nix" myPkgs.haskell-nix.prebuilt)
-        // (include "build"    "nixpkgs"     myPkgs.nixpkgs.build)
-        // (include "build"    "haskell-nix" myPkgs.haskell-nix.build)
-        // (include "build"    "shajra"      myPkgs.shajra.build);
+    ci =
+        (   include "prebuilt" "nixpkgs"    )
+        // (include "prebuilt" "haskell-nix")
+        // (include "build"    "nixpkgs"    )
+        // (include "build"    "haskell-nix")
+        // (include "build"    "shajra"     );
 
-    pkgs = infra.np.nixpkgs-stable.recurseIntoAttrs selectedPkgs;
+    pkgs = pkgsBuild.categorized.lists;
 
-in { inherit infra home pkgs sources updateMaterialized; }
+in { inherit infra home ci pkgs sources updateMaterialized; }

@@ -30,8 +30,8 @@
             ];
             # DESIGN: https://github.com/input-output-hk/hackage.nix/blob/master/index-state-hashes.nix
             hackage.index = {
-                state = "2022-02-19T00:00:00Z";
-                sha256 = "b2617a5a28d2d9f6af5e0dc4dd99331a60b9a87accf37f86686bfbb189560088";
+                state = "2022-03-10T00:00:00Z";
+                sha256 = "791c93086ab6bc0a74c46380a7226e551e3d7d938f961fd7720ff9d72969eb6a";
             };
             nixpkgs-pin = "nixpkgs-2111";
         };
@@ -56,11 +56,11 @@
         #     - "unstable": nixpkgs-unstable
         pkgs = {
             system = {
-                darwin = "stable-darwin";
+                darwin = "unstable";
                 linux = "stable-linux";
             };
             home = {
-                darwin = "stable-darwin";
+                darwin = "unstable";
                 linux = "unstable";
             };
         };

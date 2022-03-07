@@ -26,7 +26,7 @@ NIX_EXE="$(command -v nix || true)"
 ARGS=()
 
 
-. "${self.nix-project-lib.common}/share/nix-project/common.bash"
+. "${self.nix-project-lib.scriptCommon}/share/nix-project/common.bash"
 
 
 print_usage()
