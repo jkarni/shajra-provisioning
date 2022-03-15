@@ -25,6 +25,7 @@
     casks = [
         #"chromium"
         #"docker"
+        "discord"
         "firefox"
         "font-awesome-terminal-fonts"
         "font-fontawesome"
