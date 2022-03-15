@@ -113,6 +113,10 @@ let
     pickPkgs = pkgs:
         if pkgs == "stable"
         then nixpkgs-stable
+        else if pkgs == "home"
+        then nixpkgs-home
+        else if pkgs == "system"
+        then nixpkgs-system
         else nixpkgs-unstable;
 
     v = infraConfig.hackage.version;

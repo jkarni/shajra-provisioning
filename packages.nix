@@ -24,8 +24,13 @@ let
         (_path: s: builtins.attrValues s);
 
     pickHome = np.pick {
+        linux  = "home";
+        darwin = "home";
+    };
+
+    pickUnstable = np.pick {
         linux  = "unstable";
-        darwin = "stable";
+        darwin = "unstable";
     };
 
     nixpkgs.prebuilt.audio.tui.all = pickHome [
@@ -161,7 +166,7 @@ let
         "gcc"
     ];
 
-    nixpkgs.prebuilt.programming.db = pickHome [
+    nixpkgs.prebuilt.programming.db = pickUnstable [
         "postgresql"
         "schemaspy"
         "sqlint"
@@ -187,10 +192,7 @@ let
             ];
         in home // unstable;
 
-    nixpkgs.prebuilt.programming.java = np.pick {
-        linux  = "unstable";
-        darwin = "unstable";
-    } [
+    nixpkgs.prebuilt.programming.java = pickUnstable [
         "jdk"
     ];
 

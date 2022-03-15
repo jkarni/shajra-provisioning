@@ -10,25 +10,25 @@ in
     imports = [
         ../../modules/base/gui/darwin
 
-        #../../modules/audio/tui/all
+        ../../modules/audio/tui/all
 
-        #../../modules/chat/gui/all
-        #../../modules/chat/tui/all
+        ../../modules/chat/gui/all
+        ../../modules/chat/tui/all
 
-        #../../modules/documentation/all
+        #../../modules/documentation/all  # TODO: broken
 
-        #../../modules/os/darwin
+        ../../modules/os/darwin
 
-        #../../modules/programming/c/all
-        #../../modules/programming/db
-        #../../modules/programming/general
-        #../../modules/programming/haskell
-        #../../modules/programming/java
-        #../../modules/programming/python
-        #../../modules/programming/scala
-        #../../modules/programming/shell
+        ../../modules/programming/c/all
+        ../../modules/programming/db
+        ../../modules/programming/general
+        #../../modules/programming/haskell  # long build, not cached
+        ../../modules/programming/java
+        ../../modules/programming/python
+        ../../modules/programming/scala
+        ../../modules/programming/shell
 
-        #../../modules/sync
+        #../../modules/sync  # Ocaml not built/cached
     ];
 
     home.file = import home/file shared hostname;
