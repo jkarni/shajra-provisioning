@@ -63,6 +63,7 @@ let
     ];
 
     nixpkgs.prebuilt.base.gui.linux = np.pick { linux = "unstable"; } [
+        "brave"
         "devour"
         "dunst"
         "fontpreview"
@@ -75,6 +76,7 @@ let
         "xclip"
         "xorg.xdpyinfo"
         "xorg.xev"
+        "zoom-us"
 
         # Fonts
         # DESIGN: made Linux-only because of a build problem, 2021-09-21

@@ -16,7 +16,7 @@ in
     iconTheme.package = pkgs.gnome3.adwaita-icon-theme;
     settings = {
         global = {
-            browser = "${config.programs.firefox.package}/bin/firefox";
+            browser = "${config.programs.brave.package}/bin/brave";
             corner_radius = 12;
             dmenu = "${config.programs.rofi.package}/bin/rofi -dmenu -p action";
             ellipsize = "end";

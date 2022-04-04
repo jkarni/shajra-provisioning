@@ -3,10 +3,10 @@ config: pkgs: mod: modAlt: kitty:
 let
     autorandr = "${pkgs.autorandr}/bin/autorandr";
     awk = "${pkgs.gawk}/bin/awk";
+    browser = "${config.programs.brave.package}/bin/brave";
     clipmenu = "${config.services.clipmenu.package}/bin/clipmenu";
     dunstctl = "${pkgs.dunst}/bin/dunstctl";
     dunst-osd = "${pkgs.dunst-osd}/bin/dunst-osd";
-    firefox = "${config.programs.firefox.package}/bin/firefox";
     fish = "${config.programs.fish.package}/bin/fish";
     i3-workspace-name = "${pkgs.i3-workspace-name}/bin/i3-workspace-name";
     pkill = "${pkgs.procps}/bin/pkill";
@@ -207,7 +207,7 @@ in
     #"XF86AudioNext" = ''exec --no-startup-id ${mpc} next'';
     #"XF86AudioPlay" = ''exec --no-startup-id ${mpc} toggle'';
     #"XF86AudioPrev" = ''exec --no-startup-id ${mpc} prev'';
-    "XF86Search" = ''exec ${firefox}'';
+    "XF86Search" = ''exec ${browser}'';
 
     # screen capture
     "${mod}+Control+s" = ''exec ${maim-select}'';
