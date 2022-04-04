@@ -23,7 +23,7 @@
     ];
 
     casks = [
-        #"chromium"
+        "brave-browser"
         #"docker"
         "discord"
         "firefox"
