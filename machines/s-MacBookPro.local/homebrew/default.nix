@@ -18,13 +18,16 @@
     ];
 
     brews = [
-        #"kubernetes-cli"
+        "skhd"
+        "yabai"
         "svn"  # DESIGN: needed for Source Code Pro
+
+        # DESIGN: not needed for now
+        #"kubernetes-cli"
     ];
 
     casks = [
         "brave-browser"
-        #"docker"
         "discord"
         "firefox"
         "font-awesome-terminal-fonts"
@@ -33,17 +36,23 @@
         "google-chrome-beta"
         "iterm2"
         "karabiner-elements"
-        #"kensington-trackball-works"  # DESIGN: broken for M1
-        #"openvpn-connect"
         "slack"
-        #"virtualbox"
-        #"virtualbox-extension-pack"
         "wireshark"
         "zoom"
+
+        # DESIGN: wanted, but broken for M1
+        #"kensington-trackball-works"
+
+        # DESIGN: not needed for now
+        #"docker"
+        #"openvpn-connect"
+        #"virtualbox"
+        #"virtualbox-extension-pack"
     ];
 
-    extraConfig = ''
-        brew "koekeishiya/formulae/yabai", args: ["HEAD"], restart_service: :changed
-        brew "koekeishiya/formulae/skhd", args: ["HEAD"], restart_service: :changed
-    '';
+    # DESIGN: In case more cutting edge versions are needed
+    #extraConfig = ''
+    #    brew "koekeishiya/formulae/yabai", args: ["HEAD"], restart_service: :changed
+    #    brew "koekeishiya/formulae/skhd", args: ["HEAD"], restart_service: :changed
+    #'';
 }
