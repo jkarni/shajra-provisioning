@@ -3,7 +3,7 @@
 let
     build = import ../../.. {};
     shared = build.home.shared;
-    hostname = "s-MacBookPro.local";
+    hostname = "bagel";
 in
 
 {

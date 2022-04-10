@@ -2,9 +2,11 @@
 
 let
 
-    infra = (import ../.. {}).infra;
+    build = import ../.. {};
+    infra = build.infra;
     hplip = infra.np.nixpkgs-unstable.hplipWithPlugin;
     hostname = "hole";
+    user = build.home.shared."${hostname}".username;
 
 in {
 
@@ -82,7 +84,7 @@ in {
         experimental-features = nix-command flakes
     '';
     nix.package = pkgs.nixFlakes;
-    nix.trustedUsers = [ "root" "tnks" ];
+    nix.trustedUsers = [ "root" user ];
     nix.useSandbox = "relaxed";
 
     nixpkgs.config = infra.np.config;
@@ -121,7 +123,7 @@ in {
     services.tlp.enable = true;
     services.upower.enable = true;
     services.xserver.displayManager.autoLogin.enable = true;
-    services.xserver.displayManager.autoLogin.user = "tnks";
+    services.xserver.displayManager.autoLogin.user = user;
     services.xserver.displayManager.defaultSession = "none+i3";
     services.xserver.displayManager.lightdm.enable = true;
     services.xserver.displayManager.lightdm.greeter.enable = false;
@@ -164,7 +166,7 @@ in {
 
     time.timeZone = "US/Central";
 
-    users.extraUsers.tnks = {
+    users.extraUsers."${user}" = {
       isNormalUser = true;
       uid = 1000;
       shell = pkgs.fish;

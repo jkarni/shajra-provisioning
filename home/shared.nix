@@ -1,5 +1,5 @@
 {
-   "s-MacBookPro.local" = rec {
+   bagel = rec {
       homeDirectory = "/Users/${username}";
       username = "shajra";
    };

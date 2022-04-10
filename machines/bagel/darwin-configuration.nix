@@ -2,11 +2,12 @@
 
 let
 
-    infra = (import ../.. {}).infra;
+    build = import ../.. {};
+    infra = build.infra;
+    hostname = "bagel";
+    user = build.home.shared."${hostname}".username;
 
-in
-
-{
+in {
     # DESIGN: for when the day Yabai builds in Nix again
     #environment.etc."sudoers.d/yabai".text = ''
     #    shajra ALL = (root) NOPASSWD: ${pkgs.yabai}/bin/yabai --load-sa
@@ -18,6 +19,8 @@ in
     environment.systemPackages = [];
 
     homebrew = import ./homebrew;
+
+    networking.hostName = hostname;
 
     nix.binaryCaches = [
         "https://haskell-language-server.cachix.org"
@@ -33,7 +36,11 @@ in
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "shajra.cachix.org-1:V0x7Wjgd/mHGk2KQwzXv8iydfIgLupbnZKLSQt5hh9o="
     ];
-    nix.trustedUsers = [ "root" "sukant" ];
+    nix.extraOptions = ''
+        experimental-features = nix-command flakes
+    '';
+    nix.package = pkgs.nixFlakes;
+    nix.trustedUsers = [ "root" user ];
 
     nixpkgs.config = infra.np.config;
     nixpkgs.overlays = infra.np.overlays;
