@@ -15,7 +15,7 @@ in
         ../../modules/chat/gui/all
         ../../modules/chat/tui/all
 
-        #../../modules/documentation/all  # TODO: broken
+        ../../modules/documentation/all
 
         ../../modules/os/darwin
 
