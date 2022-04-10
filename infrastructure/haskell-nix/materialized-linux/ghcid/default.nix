@@ -21,7 +21,7 @@
         "tagged".flags.deepseq = true;
         "tagged".flags.transformers = true;
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
-        "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
+        "terminal-size".revision = (((hackage."terminal-size")."0.3.3").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.1").revisions).default;
         "unix-compat".revision = (((hackage."unix-compat")."0.5.4").revisions).default;
         "unix-compat".flags.old-time = false;
