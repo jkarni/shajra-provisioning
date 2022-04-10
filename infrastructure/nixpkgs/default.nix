@@ -105,6 +105,7 @@ let
 
     nixpkgs-stable   = mkNixpkgs sources.nixpkgs-stable;
     nixpkgs-unstable = mkNixpkgs sources.nixpkgs-unstable;
+    nixpkgs-master = mkNixpkgs sources.nixpkgs-master;
     nixpkgs-home = mkNixpkgs sources.nixpkgs-home;
     nixpkgs-system = mkNixpkgs sources.nixpkgs-system;
 
@@ -129,7 +130,13 @@ let
 
 in {
 
-    inherit nixpkgs-stable nixpkgs-unstable nixpkgs-home nixpkgs-system;
+    inherit
+        nixpkgs-stable
+        nixpkgs-unstable
+        nixpkgs-master
+        nixpkgs-home
+        nixpkgs-system;
+
     inherit config overlays;
 
     pick = {linux ? null, darwin ? null}: paths:

@@ -1,7 +1,7 @@
 config: pkgs:
 
 let
-    kitty = "${pkgs.kitty}/bin/kitty";
+    kitty = "${config.programs.kitty.package}/bin/kitty";
     jq    = "${pkgs.jq}/bin/jq";
 in
 

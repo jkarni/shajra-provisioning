@@ -4,7 +4,7 @@ let
     autorandr-exe = "${pkgs.autorandr}/bin/autorandr";
     i3msg-exe  = "${config.xsession.windowManager.i3.package}/bin/i3-msg";
     i3status-exe  = "${config.programs.i3status-rust.package}/bin/i3status-rs";
-    kitty-exe = "${pkgs.kitty}/bin/kitty";
+    kitty-exe = "${config.programs.kitty.package}/bin/kitty";
     hsetroot-exe  = "${pkgs.hsetroot}/bin/hsetroot";
     i3-conf = "${config.xdg.configHome}/i3status-rust/config-bottom.toml";
     i3status-conf = "${config.xdg.configHome}/i3status-rust/config-bottom.toml";
