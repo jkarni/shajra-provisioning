@@ -72,7 +72,6 @@ let
         "pavucontrol"
         "simple-scan"
         "sxiv"
-        "ungoogled-chromium"  # TODO: home-manager
         "xclip"
         "xorg.xdpyinfo"
         "xorg.xev"
@@ -190,7 +189,7 @@ let
                 linux  = "unstable";
                 darwin = "unstable";
             } [
-                "haskell.compiler.ghc8107"
+                "haskell.compiler.ghc902"
             ];
         in home // unstable;
 
@@ -229,10 +228,12 @@ let
     ];
 
     nixpkgs.build.base.gui.darwin = np.pick { darwin = "stable"; } [
-        "skhd"
         # DESIGN: yabai broken for M1
         # https://github.com/koekeishiya/yabai/issues/1054
         #"yabai"
+
+        # DESIGN: Brew skhd seemed more stable for now
+        #"skhd"
     ];
 
     nixpkgs.build.base.gui.linux = np.pick { linux = "unstable"; } [
@@ -273,16 +274,19 @@ let
     ];
 
     nixpkgs.build.programming.haskell = {}
-        // (np.hs.fromPackages "unstable" "ghc8107" "djinn")
-        // (np.hs.fromPackages "unstable" "ghc8107" "fast-tags")
-        // (np.hs.fromPackages "unstable" "ghc8107" "ghc-events")
-        // (np.hs.fromPackages "unstable" "ghc8107" "haskdogs")
-        // (np.hs.fromPackages "unstable" "ghc8107" "hasktags")
-        // (np.hs.fromPackages "unstable" "ghc8107" "hoogle")
-        // (np.hs.fromPackages "unstable" "ghc8107" "hp2pretty")
+        // (np.hs.fromPackages "unstable" "ghc902" "djinn")
 
-        # DESIGN: marked broken, 2020-11-28
-        #// (np.hs.fromPackages "unstable" "ghc8106" "threadscope")
+        # DESIGN: fails test for 9.0.2, 2022-04-10
+        // (np.hs.fromPackages "unstable" "ghc8107" "fast-tags")
+
+        // (np.hs.fromPackages "unstable" "ghc902" "ghc-events")
+        // (np.hs.fromPackages "unstable" "ghc902" "haskdogs")
+        // (np.hs.fromPackages "unstable" "ghc902" "hasktags")
+        // (np.hs.fromPackages "unstable" "ghc902" "hoogle")
+        // (np.hs.fromPackages "unstable" "ghc902" "hp2pretty")
+
+        # DESIGN: compilation broken for 9.0.2, 2022-04-10
+        // (np.hs.fromPackages "unstable" "ghc8107" "threadscope")
         ;
 
     nixpkgs.build.unused.darwin = np.pick { darwin = "stable"; } [
@@ -297,29 +301,35 @@ let
 
     haskell-nix.prebuilt.programming.haskell = {
         # DESIGN: don't use enough to want to think about a cache miss
-        #nix-tools = hn.nixpkgs.haskell-nix.nix-tools.ghc8107;
+        #nix-tools = hn.nixpkgs.haskell-nix.nix-tools.ghc902;
     };
 
     haskell-nix.build.programming.haskell = when (! isDevBuild) (
         {}
-        # DESIGN: broke 2022-03-09, not diagnosed yet
-        #// (hn.fromHackage "ghc8107" "apply-refact")
-        // (hn.fromHackage "ghc8107" "ghcid")
+        # DESIGN: the latest version has moved to 9.2 support
+        # DESIGN: pinned version in config.nix supports 8.10 and 9.0
+        # DESIGN: BROKEN: latest and 9.2
+        # DESIGN: BROKEN: pinned version and 9.0
+        // (hn.fromHackage "ghc8107" "apply-refact")
+
+        // (hn.fromHackage "ghc902" "ghcid")
+
+        # DESIGN: compilation broken for 9.0.2, 2022-04-10
         // (hn.fromHackage "ghc8107" "hlint")
-        // (hn.fromHackage "ghc8107" "stylish-haskell")
+
+        // (hn.fromHackage "ghc902" "stylish-haskell")
 
         # DESIGN: marked broken in Nixpkgs, doesn't seem to build with
         # Haskell.nix either
-        #// (hn.fromHackage "ghc8103" "ghc-events-analyze")
+        #// (hn.fromHackage "ghc902" "ghc-events-analyze")
     );
 
     haskell-nix.build.updateMaterialized = when (! isDevBuild) (
         {}
-        # DESIGN: broke 2022-03-09, not diagnosed yet
-        #// (hn.hackageUpdateMaterialized "ghc8107" "apply-refact")
-        // (hn.hackageUpdateMaterialized "ghc8107" "ghcid")
+        // (hn.hackageUpdateMaterialized "ghc8107" "apply-refact")
+        // (hn.hackageUpdateMaterialized "ghc902" "ghcid")
         // (hn.hackageUpdateMaterialized "ghc8107" "hlint")
-        // (hn.hackageUpdateMaterialized "ghc8107" "stylish-haskell")
+        // (hn.hackageUpdateMaterialized "ghc902" "stylish-haskell")
     );
 
     shajra.build.programming.haskell =

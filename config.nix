@@ -18,7 +18,7 @@
 
     infrastructure = {
         hackage.version = {
-            apply-refact = "latest";
+            apply-refact = "0.9.3.0";
             ghcid = "latest";
             hlint = "latest";
             stylish-haskell = "latest";
