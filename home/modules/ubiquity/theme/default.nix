@@ -194,7 +194,7 @@ let
             };
             proportional = {
                 name = "Source Serif 4 Variable";
-                package = pkgs.source-serif-pro;
+                package = pkgs.source-serif;
             };
         };
         colors = with pkgs.lib.colors.palettes.solarized; rec {

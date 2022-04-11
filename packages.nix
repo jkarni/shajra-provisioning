@@ -54,7 +54,7 @@ let
         "font-awesome_5"             # for i3status-rust icons
         "freefont_ttf"               # a Unicode fallback font
         "nerdfonts"                  # developer fonts with lots of icons
-        "source-serif-pro"           # serif font to complement Sauce Code Pro
+        "source-serif"               # serif font to complement Sauce Code Pro
         "symbola"                    # another Unicode fallback font
         # DESIGN: Hasklig is also built from source below
     ];
