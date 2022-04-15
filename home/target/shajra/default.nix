@@ -1,0 +1,22 @@
+{ config, pkgs, ... }:
+
+let
+    build = import ../../.. {};
+    shared = build.home.shared;
+    hostname = "shajra";
+in
+
+{
+    imports = [
+        ../../modules/base/tui/linux
+
+        ../../modules/audio/tui/all
+        ../../modules/audio/tui/linux
+
+        ../../modules/chat/tui/all
+    ];
+
+    home.file = import home/file config pkgs shared;
+    home.homeDirectory = shared."${hostname}".homeDirectory;
+    home.username = shared."${hostname}".username;
+}
