@@ -143,7 +143,6 @@ let
     nixpkgs.prebuilt.documentation.all = pickHome [
         "graphviz"
         "imagemagick"
-        "libreoffice"
         "nodePackages.textlint"
         "pandoc"
         "proselint"
@@ -157,6 +156,9 @@ let
         "gimp"
         "inkscape"
         "peek"
+
+        # DESIGN: broken for Darwin, 2022-04-15
+        "libreoffice"
     ];
 
     nixpkgs.prebuilt.programming.c.all = pickHome [
