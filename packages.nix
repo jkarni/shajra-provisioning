@@ -275,18 +275,14 @@ let
 
     nixpkgs.build.programming.haskell = {}
         // (np.hs.fromPackages "unstable" "ghc902" "djinn")
-
-        # DESIGN: fails test for 9.0.2, 2022-04-10
-        // (np.hs.fromPackages "unstable" "ghc8107" "fast-tags")
-
         // (np.hs.fromPackages "unstable" "ghc902" "ghc-events")
         // (np.hs.fromPackages "unstable" "ghc902" "haskdogs")
         // (np.hs.fromPackages "unstable" "ghc902" "hasktags")
         // (np.hs.fromPackages "unstable" "ghc902" "hoogle")
         // (np.hs.fromPackages "unstable" "ghc902" "hp2pretty")
 
-        # DESIGN: compilation broken for 9.0.2, 2022-04-10
-        // (np.hs.fromPackages "unstable" "ghc8107" "threadscope")
+        # DESIGN: marked broken, 2022-04-15
+        #// (np.hs.fromPackages "unstable" "ghc902" "threadscope")
         ;
 
     nixpkgs.build.unused.darwin = np.pick { darwin = "stable"; } [
@@ -310,11 +306,17 @@ let
         # DESIGN: pinned version in config.nix supports 8.10 and 9.0
         # DESIGN: BROKEN: latest and 9.2
         # DESIGN: BROKEN: pinned version and 9.0
-        // (hn.fromHackage "ghc8107" "apply-refact")
+        #// (hn.fromHackage "ghc8107" "apply-refact")
+
+        # DESIGN: marked broken in Nixpkgs, 2022-04-15
+        # DESIGN: doesn't build for GHC 9.0.2, 2022-04-15
+        # DESIGN: https://github.com/elaforge/fast-tags/issues/53
+        // (hn.fromHackage "ghc8107" "fast-tags")
 
         // (hn.fromHackage "ghc902" "ghcid")
 
-        # DESIGN: compilation broken for 9.0.2, 2022-04-10
+        # DESIGN: compilation broken for 9.0.2, 2022-04-15
+        # DESIGN: compilation broken for 9.0.1, 2022-04-15
         // (hn.fromHackage "ghc8107" "hlint")
 
         // (hn.fromHackage "ghc902" "stylish-haskell")
@@ -326,7 +328,8 @@ let
 
     haskell-nix.build.updateMaterialized = when (! isDevBuild) (
         {}
-        // (hn.hackageUpdateMaterialized "ghc8107" "apply-refact")
+        #// (hn.hackageUpdateMaterialized "ghc8107" "apply-refact")
+        // (hn.hackageUpdateMaterialized "ghc8107" "fast-tags")
         // (hn.hackageUpdateMaterialized "ghc902" "ghcid")
         // (hn.hackageUpdateMaterialized "ghc8107" "hlint")
         // (hn.hackageUpdateMaterialized "ghc902" "stylish-haskell")

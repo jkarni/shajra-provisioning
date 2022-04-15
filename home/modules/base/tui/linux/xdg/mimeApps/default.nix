@@ -7,6 +7,7 @@ rec {
         "x-scheme-handler/http"         = "brave-browser.desktop";
         "x-scheme-handler/https"        = "brave-browser.desktop";
         "x-scheme-handler/chrome"       = "brave-browser.desktop";
+        "x-scheme-handler/mailto"       = "brave-browser.desktop";
         "text/html"                     = "brave-browser.desktop";
         "application/x-extension-htm"   = "brave-browser.desktop";
         "application/x-extension-html"  = "brave-browser.desktop";
