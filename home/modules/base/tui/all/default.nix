@@ -15,7 +15,7 @@ in
     ];
 
     home.extraPackages = extraPackages;
-    home.file = import home/file config.home.homeDirectory;
+    home.file = import home/file config;
 
     programs.bash.enable = true;
     programs.bat.config = { theme = config.theme.external.bat.name; };
@@ -43,6 +43,7 @@ in
     programs.neovim = import programs/neovim pkgs;
     programs.readline = import programs/readline;
     programs.skim.enable = true;
+    programs.starship = import programs/starship;
     programs.zoxide.enable = true;
 
     xdg.configFile = import xdg/configFile config pkgs;

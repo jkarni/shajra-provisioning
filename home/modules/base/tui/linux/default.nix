@@ -19,7 +19,6 @@ in
 
     programs.direnv-nix-lorelei.enable = true;
     programs.emacs.package = pkgs.emacsGcc;
-    programs.starship = import programs/starship;
 
     services.emacs = import services/emacs;
 

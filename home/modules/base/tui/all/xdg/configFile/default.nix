@@ -51,4 +51,5 @@ in
         theme_violet  = colors.nominal.violet;
         theme_yellow  = colors.nominal.yellow;
     });
+    macchina.source = ./macchina;
 }

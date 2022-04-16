@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 let
     build = import ../../.. {};
@@ -16,7 +16,6 @@ in
         ../../modules/chat/tui/all
     ];
 
-    home.file = import home/file config pkgs shared;
     home.homeDirectory = shared."${hostname}".homeDirectory;
     home.username = shared."${hostname}".username;
 }

@@ -75,24 +75,10 @@ in
     functions = {
         system-info = {
             description = "A summary of system information";
-            body =
-                # DESIGN: Nixpkgs-darwin has an older version of Macchina that
-                # complains if you use the wrong switches.  Will notice when it
-                # updates and the prompt looks bad.
-                let linuxOnly = "--hide Resolution --long-shell";
-                    platformSpecific = if isDarwin then "" else linuxOnly;
-                in ''
-                # DESIGN: Macchina options regressed
-                # "${pkgs.macchina}/bin/macchina" \
-                #     ${platformSpecific} \
-                #     --color Yellow \
-                #     --no-title \
-                #     --spacing 1 \
-                #     --no-ascii \
-                #     --bar \
-                #     --no-bar-delimiter \
-                #     --no-box
-                "${pkgs.coreutils}/bin/cat" "${./color_bars.txt}"
+            body = ''
+                "${pkgs.macchina}/bin/macchina" --theme shajra
+                # DESIGN: not messing with color_bars for now
+                #"${pkgs.coreutils}/bin/cat" "${./color_bars.txt}"
             '';
         };
         projects = {
