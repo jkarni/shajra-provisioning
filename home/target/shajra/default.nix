@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
     build = import ../../.. {};
@@ -8,18 +8,16 @@ in
 
 {
     imports = [
-        ../../modules/base/tui/linux
-
-        ../../modules/audio/tui/all
-        ../../modules/audio/tui/linux
-
-        ../../modules/chat/tui/all
+        ../../modules/base/gui/linux
     ];
 
     home.homeDirectory = shared."${hostname}".homeDirectory;
     home.username = shared."${hostname}".username;
 
     programs.git = import programs/git lib;
+    programs.i3status-rust = import programs/i3status-rust config pkgs;
 
     xdg.configFile = import xdg/configFile;
+
+    xsession.windowManager.i3 = import xsession/windowManager/i3 config lib;
 }
