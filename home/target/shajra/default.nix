@@ -20,4 +20,6 @@ in
     home.username = shared."${hostname}".username;
 
     programs.git = import programs/git lib;
+
+    xdg.configFile = import xdg/configFile;
 }
