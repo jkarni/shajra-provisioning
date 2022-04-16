@@ -23,10 +23,10 @@ set -o pipefail
 . "${self.nix-project-lib.scriptCommon}/share/nix-project/common.bash"
 
 
-# DESIGN: intentionally letting dbus-send come in from /run/current-system.
-# This guards against incompatibility of X between nixpkgs-stable and
-# nixpkgs-unstable.
-PATH="$PATH:/run/current-system/sw/bin"
+# DESIGN: intentionally letting dbus-send come in from /run/current-system (or
+# /usr/bin if not in NixOS). This guards against incompatibility of X between
+# nixpkgs-stable and nixpkgs-unstable.
+PATH="$PATH:/run/current-system/sw/bin:/usr/bin"
 COMMAND=status
 
 
