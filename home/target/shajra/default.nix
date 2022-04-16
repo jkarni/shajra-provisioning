@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 let
     build = import ../../.. {};
@@ -18,4 +18,6 @@ in
 
     home.homeDirectory = shared."${hostname}".homeDirectory;
     home.username = shared."${hostname}".username;
+
+    programs.git = import programs/git lib;
 }
