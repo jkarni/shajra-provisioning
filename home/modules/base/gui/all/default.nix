@@ -15,7 +15,7 @@ in {
     programs.fish = import programs/fish;
     programs.kitty = import programs/kitty config pkgs;
     programs.noti.enable = true;
-    programs.urxvt.enable = true;
+    programs.urxvt = import programs/urxvt config pkgs;
 
     xdg.configFile = import xdg/configFile config pkgs;
 }
