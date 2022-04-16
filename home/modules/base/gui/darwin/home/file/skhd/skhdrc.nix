@@ -78,10 +78,22 @@ lalt + shift - k : yabai -m window --swap north
 lalt + shift - l : yabai -m window --swap east
 
 # warp window
-lcmd + shift - h : yabai -m window --warp west
-lcmd + shift - j : yabai -m window --warp south
-lcmd + shift - k : yabai -m window --warp north
-lcmd + shift - l : yabai -m window --warp east
+lcmd + shift - h [
+    "google chrome beta" ~
+    * : yabai -m window --warp west
+]
+lcmd + shift - j [
+    "google chrome beta" ~
+    * : yabai -m window --warp south
+]
+lcmd + shift - k [
+    "google chrome beta" ~
+    * : yabai -m window --warp north
+]
+lcmd + shift - l [
+    "google chrome beta" ~
+    * : yabai -m window --warp east
+]
 
 # move window
 lalt + cmd - h : yabai -m window --move rel:-20:0
@@ -145,18 +157,54 @@ lalt + shift - 8 : yabai -m window --space 8
 lalt + shift - 9 : yabai -m window --space 9
 
 # send window to desktop and follow focus
-lcmd + shift - 0x2C : yabai -m window --space last; yabai -m space --focus last
-lcmd + shift - 0x2B : yabai -m window --space prev; yabai -m space --focus prev
-lcmd + shift - 0x2F : yabai -m window --space next; yabai -m space --focus next
-lcmd + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
-lcmd + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
-lcmd + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
-lcmd + shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
-lcmd + shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
-lcmd + shift - 6 : yabai -m window --space  6; yabai -m space --focus 6
-lcmd + shift - 7 : yabai -m window --space  7; yabai -m space --focus 7
-lcmd + shift - 8 : yabai -m window --space  8; yabai -m space --focus 8
-lcmd + shift - 9 : yabai -m window --space  9; yabai -m space --focus 9
+lcmd + shift - 0x2C [
+    "google chrome beta" ~
+    * : yabai -m window --space last; yabai -m space --focus last
+]
+lcmd + shift - 0x2B [
+    "google chrome beta" ~
+    * : yabai -m window --space prev; yabai -m space --focus prev
+]
+lcmd + shift - 0x2F [
+    "google chrome beta" ~
+    * : yabai -m window --space next; yabai -m space --focus next
+]
+lcmd + shift - 1 [
+    "google chrome beta" ~
+    * : yabai -m window --space  1; yabai -m space --focus 1
+]
+lcmd + shift - 2 [
+    "google chrome beta" ~
+    * : yabai -m window --space  2; yabai -m space --focus 2
+]
+lcmd + shift - 3 [
+    "google chrome beta" ~
+    * : yabai -m window --space  3; yabai -m space --focus 3
+]
+lcmd + shift - 4 [
+    "google chrome beta" ~
+    * : yabai -m window --space  4; yabai -m space --focus 4
+]
+lcmd + shift - 5 [
+    "google chrome beta" ~
+    * : yabai -m window --space  5; yabai -m space --focus 5
+]
+lcmd + shift - 6 [
+    "google chrome beta" ~
+    * : yabai -m window --space  6; yabai -m space --focus 6
+]
+lcmd + shift - 7 [
+    "google chrome beta" ~
+    * : yabai -m window --space  7; yabai -m space --focus 7
+]
+lcmd + shift - 8 [
+    "google chrome beta" ~
+    * : yabai -m window --space  8; yabai -m space --focus 8
+]
+lcmd + shift - 9 [
+    "google chrome beta" ~
+    * : yabai -m window --space  9; yabai -m space --focus 9
+]
 
 # focus monitor
 lalt + cmd - 0x2C : yabai -m display --focus last
