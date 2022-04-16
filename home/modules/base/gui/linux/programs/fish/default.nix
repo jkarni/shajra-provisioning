@@ -33,4 +33,8 @@ in
             bind -M insert \ec clipmenu-fzf
         end
     '';
+
+    shellAliases = {
+        "sx" = "sxiv -a";
+    };
 }
