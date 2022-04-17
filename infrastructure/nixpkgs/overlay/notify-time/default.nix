@@ -39,7 +39,7 @@ let
     notify'.linux = ''
         "${self.libcanberra-gtk3}/bin/canberra-gtk-play" \
             --id "$sound" \
-            2>/dev/null
+            2>/dev/null || true
 
         local action_args=()
         if [ "$con_id" -gt 0 ]
