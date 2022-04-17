@@ -131,6 +131,7 @@ let
 
     nixpkgs.prebuilt.chat.gui.linux = np.pick { linux = "unstable"; } [
         "discord"
+        "element-desktop"
         "irccloud"
         "signal-desktop"
         "slack"
