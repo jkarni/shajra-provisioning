@@ -118,6 +118,7 @@ in {
     services.openssh.enable = false;
     services.openssh.extraConfig = ''UseDNS no'';
     services.openssh.ports = [];   # put a port here when using
+    services.picom.enable = true;
     services.printing.drivers = [ hplip ];
     services.printing.enable = true;
     services.tlp.enable = true;

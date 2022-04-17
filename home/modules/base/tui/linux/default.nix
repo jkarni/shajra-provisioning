@@ -18,7 +18,7 @@ in
     home.extraPackages = build.pkgs.base.tui.linux;
 
     programs.direnv-nix-lorelei.enable = true;
-    programs.emacs.package = pkgs.emacsGcc;
+    programs.emacs.package = pkgs.emacsNativeComp;
 
     services.emacs = import services/emacs;
 

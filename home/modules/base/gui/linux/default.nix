@@ -30,7 +30,6 @@ in
     services.dunst = import services/dunst config pkgs;
     services.gammastep.enable = true;
     services.gammastep.provider = "geoclue2";
-    services.picom.enable = true;
     services.xsuspender = import services/xsuspender;
 
     xresources = import ./xresources config pkgs;

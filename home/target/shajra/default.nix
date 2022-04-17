@@ -21,7 +21,6 @@ in
     services.gammastep.enable = lib.mkForce false;
     services.gpg-agent.enable = true;
     services.gpg-agent.enableSshSupport = true;
-    services.picom.enable = lib.mkForce false;
 
     xdg.configFile = import xdg/configFile;
 

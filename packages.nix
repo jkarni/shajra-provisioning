@@ -294,7 +294,7 @@ let
     ];
 
     nixpkgs.build.unused.linux = np.pick { linux = "unstable"; } [
-        "emacsGcc"  # TODO: what is native compilation for an M1 Mac?
+        "emacsNativeComp"  # TODO: what is native compilation for an M1 Mac?
     ];
 
     haskell-nix.prebuilt.programming.haskell = {
