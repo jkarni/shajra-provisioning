@@ -18,6 +18,7 @@ in
     home.file = import home/file config;
 
     programs.bash.enable = true;
+    programs.bottom = import programs/bottom config;
     programs.bat.config = { theme = config.theme.external.bat.name; };
     programs.bat.enable = true;
     programs.broot = import programs/broot config pkgs;
@@ -41,6 +42,8 @@ in
     programs.lesspipe.enable = true;
     programs.man.generateCaches = true;
     programs.neovim = import programs/neovim pkgs;
+    programs.nnn.enable = true;
+    programs.nushell.enable = true;
     programs.readline = import programs/readline;
     programs.skim.enable = true;
     programs.starship = import programs/starship;

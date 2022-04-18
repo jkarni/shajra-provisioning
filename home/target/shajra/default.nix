@@ -22,6 +22,8 @@ in
     services.gpg-agent.enable = true;
     services.gpg-agent.enableSshSupport = true;
 
+    targets.genericLinux.enable = true;
+
     xdg.configFile = import xdg/configFile;
 
     xsession.windowManager.i3 = import xsession/windowManager/i3 config lib;

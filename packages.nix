@@ -101,7 +101,6 @@ let
         "macchina"
         "nix-diff"
         "nixfmt"
-        "nnn"
         "paperkey"
         "patchelf"
         "procps"
@@ -120,7 +119,6 @@ let
         "entr"
         "fswatch"
         "niv"
-        "nix-index"
         "pciutils"
         "powertop"
         "usbutils"
@@ -197,7 +195,6 @@ let
         in home // unstable;
 
     nixpkgs.prebuilt.programming.java = pickUnstable [
-        "jdk"
     ];
 
     nixpkgs.prebuilt.programming.python = pickHome [

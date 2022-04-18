@@ -8,6 +8,7 @@ let
     dunstctl = "${pkgs.dunst}/bin/dunstctl";
     dunst-osd = "${pkgs.dunst-osd}/bin/dunst-osd";
     fish = "${config.programs.fish.package}/bin/fish";
+    flameshot = "${config.services.flameshot.package}/bin/flameshot";
     i3-workspace-name = "${pkgs.i3-workspace-name}/bin/i3-workspace-name";
     pkill = "${pkgs.procps}/bin/pkill";
     rofi = "${config.programs.rofi.package}/bin/rofi";
@@ -210,7 +211,9 @@ in
     "XF86Search" = ''exec ${browser}'';
 
     # screen capture
-    "${mod}+Control+s" = ''exec ${maim-select}'';
+    # DESIGN; trying out flameshot
+    #"${mod}+Control+s" = ''exec ${maim-select}'';
+    "${mod}+Control+s" = ''exec ${flameshot} gui'';
 
     # kill frame with mouse click on titlebar
     "button2" = ''--release kill'';

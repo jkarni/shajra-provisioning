@@ -28,8 +28,10 @@ in
 
     services.clipmenu.enable = true;
     services.dunst = import services/dunst config pkgs;
+    services.flameshot = import services/flameshot config;
     services.gammastep.enable = true;
     services.gammastep.provider = "geoclue2";
+    services.gromit-mpx.enable = true;
     services.xsuspender = import services/xsuspender;
 
     xresources = import ./xresources config pkgs;
