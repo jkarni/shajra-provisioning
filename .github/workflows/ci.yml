@@ -12,10 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v16
+    - uses: cachix/install-nix-action@v17
       with:
         extra_nix_config: |
-          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -48,10 +47,9 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v16
+    - uses: cachix/install-nix-action@v17
       with:
         extra_nix_config: |
-          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -80,10 +78,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v16
+    - uses: cachix/install-nix-action@v17
       with:
         extra_nix_config: |
-          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -93,20 +90,19 @@ jobs:
         signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
     - run: cat ~/.config/nix/nix.conf
     - run: |
-        NIX_PATH=nixos=channel:nixos-21.11 \
-        nix shell nixos.nixos-rebuild \
-            --command ./nixos-rebuild --target hole        build
-    - run:            ./home-manager  --target hole --slim build
+        nix shell nixpkgs/nixos-21.11#nixos-rebuild \
+            --command ./nixos-rebuild --target hole build
+    - run: ./home-manager --target hole   --slim build
+    - run: ./home-manager --target shajra --slim build
   installers-darwin:
     name: darwin installers
     needs: [packages-darwin]
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: cachix/install-nix-action@v16
+    - uses: cachix/install-nix-action@v17
       with:
         extra_nix_config: |
-          experimental-features = nix-command
           trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
           substituters = https://hydra.iohk.io https://cache.nixos.org/
@@ -115,5 +111,5 @@ jobs:
         name: shajra
         signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
     - run: cat ~/.config/nix/nix.conf
-    - run: ./darwin-rebuild --target s-MacBookPro.local        build
-    - run: ./home-manager   --target s-MacBookPro.local --slim build
+    - run: ./darwin-rebuild --target bagel        build
+    - run: ./home-manager   --target bagel --slim build
