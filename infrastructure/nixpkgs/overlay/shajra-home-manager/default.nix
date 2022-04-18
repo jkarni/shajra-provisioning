@@ -11,6 +11,7 @@ self.nix-project-lib.writeShellCheckedExe progName
     inherit meta;
     path = with self; [
         coreutils
+        findutils
         git
         gnugrep
         gnutar
@@ -27,6 +28,7 @@ set -o pipefail
 TARGET="$(hostname)"
 NIX_EXE="$(command -v nix || true)"
 SLIM=false
+SWITCH_NEW=false
 ARGS=()
 
 
@@ -91,16 +93,32 @@ main()
             ARGS+=("$@")
             break
             ;;
+        switch)
+            if new_style_env
+            then SWITCH_NEW=true
+            else ARGS+=("$1")
+            fi
+            ;;
         *)
             ARGS+=("$1")
             ;;
         esac
         shift
     done
-    if [ "''${#ARGS[@]}" -gt 0 ]
-    then manage "''${ARGS[@]}"
-    else manage build
+    add_nix_to_path "$NIX_EXE"
+    if "$SWITCH_NEW"
+    then switch_new "''${ARGS[@]}"
+    else
+        if [ "''${#ARGS[@]}" -gt 0 ]
+        then manage "''${ARGS[@]}"
+        else manage build
+        fi
     fi
+}
+
+new_style_env()
+{
+    test -e ~/.nix-profile/manifest.json
 }
 
 manage()
@@ -109,7 +127,6 @@ manage()
     if $SLIM
     then config="$config/slim.nix"
     fi
-    add_nix_to_path "$NIX_EXE"
     /usr/bin/env -i \
         HOME="$HOME" \
         PATH="$PATH" \
@@ -119,6 +136,17 @@ manage()
         USER="$USER" \
         NIX_PATH="nixpkgs=${sources.nixpkgs-home}" \
         home-manager -f "$config" "$@"
+}
+
+# DESIGN: This deals with Home Manager's incomplete support for 'nix profile'
+switch_new()
+{
+    local result; result="$(manage build --no-out-link "$@")"
+    nix profile list \
+        | grep home-manager-path \
+        | cut -d ' ' -f 4 \
+        | xargs nix profile remove
+    "$result/activate"
 }
 
 
