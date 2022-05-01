@@ -119,6 +119,7 @@ in {
     services.openssh.extraConfig = ''UseDNS no'';
     services.openssh.ports = [];   # put a port here when using
     services.picom.enable = true;
+    services.picom.vSync = true;
     services.printing.drivers = [ hplip ];
     services.printing.enable = true;
     services.tlp.enable = true;
