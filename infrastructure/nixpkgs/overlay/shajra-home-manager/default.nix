@@ -142,11 +142,24 @@ manage()
 switch_new()
 {
     local result; result="$(manage build --no-out-link "$@")"
-    nix profile list \
-        | grep home-manager-path \
-        | cut -d ' ' -f 4 \
-        | xargs nix profile remove
-    "$result/activate"
+    local old_profile; old_profile="$(
+        nix profile list \
+            | cut -d ' ' -f 4 \
+            | grep -- '^/nix/store/.*-home-manager-path$' \
+            | head -1
+    )"
+    if [ -n "$old_profile" ]
+    then
+        echo "Removing old profile: $old_profile"
+        nix profile remove "$old_profile"
+        if ! "$result/activate"
+        then
+            echo "Restoring old profile: $old_profile"
+            nix profile install "$old_profile"
+        fi
+    else
+        "$result/activate"
+    fi
 }
 
 
