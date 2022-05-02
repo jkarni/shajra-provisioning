@@ -37,6 +37,8 @@ delta:
         enable = true;
         options.features = "hoopoe";
     };
+    # DESIGN: For now I like delta more, maybe switch back later
+    #difftastic.enable = false;
     extraConfig = {
         branch.autosetuprebase = "remote";
         color = {
