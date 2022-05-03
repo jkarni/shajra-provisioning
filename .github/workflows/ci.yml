@@ -29,14 +29,14 @@ jobs:
             --arg checkMaterialization true \
             --argstr buildSet ${{ matrix.set }} \
             --argstr buildInfrastructure ${{ matrix.infra }} \
-            pkgs
+            ci
     - run: |
         nix --print-build-logs path-info \
             --file . \
             --arg checkMaterialization true \
             --argstr buildSet ${{ matrix.set }} \
             --argstr buildInfrastructure ${{ matrix.infra }} \
-            pkgs
+            ci
   packages-darwin:
     strategy:
       matrix:
@@ -64,14 +64,14 @@ jobs:
             --arg checkMaterialization true \
             --argstr buildSet ${{ matrix.set }} \
             --argstr buildInfrastructure ${{ matrix.infra }} \
-            pkgs
+            ci
     - run: |
         nix --print-build-logs path-info \
             --file . \
             --arg checkMaterialization true \
             --argstr buildSet ${{ matrix.set }} \
             --argstr buildInfrastructure ${{ matrix.infra }} \
-            pkgs
+            ci
   installers-linux:
     name: linux installers
     needs: [packages-linux]
