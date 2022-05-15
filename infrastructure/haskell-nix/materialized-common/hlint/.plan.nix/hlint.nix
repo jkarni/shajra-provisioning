@@ -11,9 +11,9 @@
     flags = { threaded = true; gpl = true; ghc-lib = false; hsyaml = false; };
     package = {
       specVersion = "1.18";
-      identifier = { name = "hlint"; version = "3.3.6"; };
+      identifier = { name = "hlint"; version = "3.4"; };
       license = "BSD-3-Clause";
-      copyright = "Neil Mitchell 2006-2021";
+      copyright = "Neil Mitchell 2006-2022";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
       author = "Neil Mitchell <ndmitchell@gmail.com>";
       homepage = "https://github.com/ndmitchell/hlint#readme";
@@ -41,6 +41,9 @@
         "data/*.hs"
         "data/*.yaml"
         "tests/*.test"
+        "data/default.yaml"
+        "data/hlint.yaml"
+        "data/report_template.html"
         ];
       extraTmpFiles = [];
       extraDocFiles = [ "README.md" "CHANGES.txt" ];
@@ -70,7 +73,7 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.0.0") && (compiler.isGhc && (compiler.version).lt "9.1.0")
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.2.2") && (compiler.isGhc && (compiler.version).lt "9.3.0")
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))

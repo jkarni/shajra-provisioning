@@ -8,10 +8,10 @@
   , config
   , ... }:
   {
-    flags = {};
+    flags = { ghc-lib = false; };
     package = {
       specVersion = "2.4";
-      identifier = { name = "stylish-haskell"; version = "0.14.1.0"; };
+      identifier = { name = "stylish-haskell"; version = "0.14.2.0"; };
       license = "BSD-3-Clause";
       copyright = "2012 Jasper Van der Jeugt";
       maintainer = "Jasper Van der Jeugt <m@jaspervdj.be>";
@@ -51,7 +51,7 @@
           (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
           (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2"
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2" && !flags.ghc-lib
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
@@ -111,7 +111,7 @@
             (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2"
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2" && !flags.ghc-lib
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
@@ -151,7 +151,7 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2"
+            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.2.2" && !flags.ghc-lib
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))

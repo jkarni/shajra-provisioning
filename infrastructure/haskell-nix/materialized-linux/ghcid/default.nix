@@ -12,7 +12,7 @@
         "shelly".revision = (((hackage."shelly")."1.10.0").revisions).default;
         "shelly".flags.build-examples = false;
         "shelly".flags.lifted = false;
-        "tasty".revision = (((hackage."tasty")."1.4.2.1").revisions).default;
+        "tasty".revision = (((hackage."tasty")."1.4.2.3").revisions).default;
         "tasty".flags.clock = true;
         "tasty".flags.unix = true;
         "mtl".revision = (((hackage."mtl")."2.2.2").revisions).default;
@@ -60,7 +60,7 @@
         "tasty-hunit".revision = (((hackage."tasty-hunit")."0.10.0.3").revisions).default;
         "deepseq".revision = (((hackage."deepseq")."1.4.5.0").revisions).default;
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
-        "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.1").revisions).default;
+        "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.3").revisions).default;
         "ansi-terminal".flags.example = false;
         "hashable".revision = (((hackage."hashable")."1.4.0.2").revisions).default;
         "hashable".flags.containers = true;

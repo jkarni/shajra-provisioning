@@ -6,7 +6,7 @@
         "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
         "regex-posix".revision = (((hackage."regex-posix")."0.96.0.1").revisions).default;
         "regex-posix".flags._regex-posix-clib = false;
-        "unordered-containers".revision = (((hackage."unordered-containers")."0.2.18.0").revisions).default;
+        "unordered-containers".revision = (((hackage."unordered-containers")."0.2.19.1").revisions).default;
         "unordered-containers".flags.debug = false;
         "integer-logarithms".revision = (((hackage."integer-logarithms")."1.0.3.1").revisions).default;
         "integer-logarithms".flags.check-bounds = false;
@@ -56,7 +56,7 @@
         "attoparsec".flags.developer = false;
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.0").revisions).default;
-        "HsYAML".revision = (((hackage."HsYAML")."0.2.1.0").revisions).default;
+        "HsYAML".revision = (((hackage."HsYAML")."0.2.1.1").revisions).default;
         "HsYAML".flags.exe = false;
         "call-stack".revision = (((hackage."call-stack")."0.4.0").revisions).default;
         "ghc-prim".revision = (((hackage."ghc-prim")."0.7.0").revisions).default;
@@ -67,12 +67,12 @@
         "distributive".flags.semigroups = true;
         "text-short".revision = (((hackage."text-short")."0.1.5").revisions).default;
         "text-short".flags.asserts = false;
-        "bifunctors".revision = (((hackage."bifunctors")."5.5.11").revisions).default;
+        "bifunctors".revision = (((hackage."bifunctors")."5.5.12").revisions).default;
         "bifunctors".flags.tagged = true;
         "bifunctors".flags.semigroups = true;
         "base".revision = (((hackage."base")."4.15.1.0").revisions).default;
         "time".revision = (((hackage."time")."1.9.3").revisions).default;
-        "random".revision = (((hackage."random")."1.2.1").revisions).default;
+        "random".revision = (((hackage."random")."1.2.1.1").revisions).default;
         "process".revision = (((hackage."process")."1.6.13.2").revisions).default;
         "regex-base".revision = (((hackage."regex-base")."0.94.0.2").revisions).default;
         "th-abstraction".revision = (((hackage."th-abstraction")."0.4.3.0").revisions).default;
@@ -112,7 +112,7 @@
         "uniplate".revision = (((hackage."uniplate")."1.6.13").revisions).default;
         "deepseq".revision = (((hackage."deepseq")."1.4.5.0").revisions).default;
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
-        "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.1").revisions).default;
+        "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.3").revisions).default;
         "ansi-terminal".flags.example = false;
         "test-framework-hunit".revision = (((hackage."test-framework-hunit")."0.3.0.2").revisions).default;
         "test-framework-hunit".flags.base3 = false;
@@ -180,7 +180,13 @@
     { packages = { stylish-haskell = ./.plan.nix/stylish-haskell.nix; }; };
   modules = [
     ({ lib, ... }:
-      { packages = { "stylish-haskell" = { flags = {}; }; }; })
+      {
+        packages = {
+          "stylish-haskell" = {
+            flags = { "ghc-lib" = lib.mkOverride 900 false; };
+            };
+          };
+        })
     ({ lib, ... }:
       {
         packages = {

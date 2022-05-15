@@ -18,11 +18,13 @@
 
     infrastructure = {
         hackage.version = {
-            apply-refact    = "0.9.3.0";
             fast-tags       = "latest";
             ghcid           = "latest";
-            hlint           = "latest";
             stylish-haskell = "latest";
+
+            # DESIGN: latest moved to 9.2
+            #apply-refact    = "latest";
+            #hlint           = "latest";
         };
         haskell-nix = {
             checkMaterialization = false;
@@ -31,8 +33,8 @@
             ];
             # DESIGN: https://github.com/input-output-hk/hackage.nix/blob/master/index-state-hashes.nix
             hackage.index = {
-                state = "2022-04-15T00:00:00Z";
-                sha256 = "9dd9718801f9afc3c4c00e14befcc5a6bb2a5acd2a76e55b2118b475a2cae22d";
+                state = "2022-05-15T00:00:00Z";
+                sha256 = "c49d92f9ef16eca1bef1d08ff284163a8568de785d5262dd6fdb80b873ff4840";
             };
             nixpkgs-pin = "nixpkgs-2111";
         };
