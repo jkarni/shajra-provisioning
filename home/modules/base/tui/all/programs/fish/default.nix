@@ -232,6 +232,7 @@ in
         brd = "broot-dir";
         brt = "broot-tree";
         c = "bat";
+        d = "devour";
         ec = "emacsclient -c -n";
         emacs-doom = "emacs --with-profile doom & disown";
         emacs-min = "emacs --with-profile min & disown";
