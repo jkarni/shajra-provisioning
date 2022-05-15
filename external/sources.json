@@ -139,11 +139,11 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "moneydance": {
-        "sha256": "1pn1yn8iy9y59vn9z6y74gbvi1b9knkqrbaj1hcpsrrg6q9lx3ib",
+        "sha256": "1h4nblx8546xnkdqj6m7kvk1whziaqrdyyskxkns9xg3a86pw7gv",
         "type": "tarball",
-        "url": "https://infinitekind.com/stabledl/2022_4060/moneydance-linux.tar.gz",
+        "url": "https://infinitekind.com/stabledl/2022.3_4076/moneydance-linux.tar.gz",
         "url_template": "https://infinitekind.com/stabledl/<version>/moneydance-linux.tar.gz",
-        "version": "2022_4060"
+        "version": "2022.3_4076"
     },
     "nix-darwin": {
         "branch": "master",
