@@ -1,6 +1,10 @@
-pkgs: sources: isDarwin:
+config: pkgs: sources: isDarwin:
 
 let
+
+    format = f: x: pkgs.lib.colors.format "%R%G%B" (f x);
+    id = x: x;
+    colors = pkgs.lib.colors.transformColors (format id) config.theme.colors;
 
     fzf-preview-dir = pkgs.writers.writeDash "fzf-preview-dir" ''
         "${pkgs.exa}/bin/exa" --color always \
@@ -24,9 +28,9 @@ let
 
         # DESIGN: Make colors Solarized Light
         substituteInPlace "$out/functions/cless.fish" \
-            --replace '[38;5;31m'  '[36m' \
-            --replace '[38;5;70m'  '[32m' \
-            --replace '[38;5;220m' '[0m$reversed_ansi_code'
+            --replace '0280A5' '${colors.nominal.cyan}' \
+            --replace '5BA502' '${colors.nominal.green}' \
+            --replace 'F0CB02' '${colors.nominal.yellow}'
     '';
 
     linuxInteractiveShellInit = ''

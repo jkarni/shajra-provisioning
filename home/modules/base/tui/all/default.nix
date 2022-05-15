@@ -32,7 +32,7 @@ in
     #programs.direnv-nix-lorelei.enable = true;
     programs.emacs = import programs/emacs;
     programs.feh.enable = true;
-    programs.fish = import programs/fish pkgs sources build.infra.isDarwin;
+    programs.fish = import programs/fish config pkgs sources build.infra.isDarwin;
     programs.fzf.enable = true;
     programs.gh.enable = true;
     programs.git = import programs/git sources.delta;
