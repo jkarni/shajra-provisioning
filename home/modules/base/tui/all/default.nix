@@ -47,6 +47,7 @@ in
     programs.readline = import programs/readline;
     programs.skim.enable = true;
     programs.starship = import programs/starship;
+    programs.tealdeer.enable = true;
     programs.zoxide.enable = true;
 
     xdg.configFile = import xdg/configFile config pkgs;
