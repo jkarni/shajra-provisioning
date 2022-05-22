@@ -8,7 +8,7 @@
 
 (when (featurep! +dante)
   ;; DESIGN: target latest for both
-  (package! dante :pin "8741419333fb85ed2c1d71f5902688f5201b0a40")
+  (package! dante :pin "b81081c2eb8dcbd7e67e05cf5e1991df6cf3e57c")
   (package! attrap :pin "19a520ecb99529790906a1fb5599acdf2b4f005f"))
 
 (when (and (featurep! +lsp) (not (featurep! :tools lsp +eglot)))
