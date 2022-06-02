@@ -23,7 +23,7 @@
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
         "terminal-size".revision = (((hackage."terminal-size")."0.3.3").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.0").revisions).default;
-        "unix-compat".revision = (((hackage."unix-compat")."0.5.4").revisions).default;
+        "unix-compat".revision = (((hackage."unix-compat")."0.6").revisions).default;
         "unix-compat".flags.old-time = false;
         "type-equality".revision = (((hackage."type-equality")."1").revisions).default;
         "hinotify".revision = (((hackage."hinotify")."0.4.1").revisions).default;
@@ -48,7 +48,7 @@
         "exceptions".revision = (((hackage."exceptions")."0.10.4").revisions).default;
         "optparse-applicative".revision = (((hackage."optparse-applicative")."0.17.0.0").revisions).default;
         "optparse-applicative".flags.process = true;
-        "constraints".revision = (((hackage."constraints")."0.13.3").revisions).default;
+        "constraints".revision = (((hackage."constraints")."0.13.4").revisions).default;
         "lifted-base".revision = (((hackage."lifted-base")."0.2.3.12").revisions).default;
         "clock".revision = (((hackage."clock")."0.8.3").revisions).default;
         "clock".flags.llvm = false;

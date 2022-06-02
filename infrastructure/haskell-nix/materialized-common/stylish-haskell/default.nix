@@ -15,7 +15,7 @@
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
-        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.2.20220307").revisions).default;
+        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.3.20220527").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
         "vector".revision = (((hackage."vector")."0.12.3.1").revisions).default;
         "vector".flags.internalchecks = false;
@@ -93,13 +93,13 @@
         "time-compat".flags.old-locale = false;
         "HsYAML-aeson".revision = (((hackage."HsYAML-aeson")."0.2.0.1").revisions).default;
         "HsYAML-aeson".flags.exe = false;
-        "primitive".revision = (((hackage."primitive")."0.7.3.0").revisions).default;
+        "primitive".revision = (((hackage."primitive")."0.7.4.0").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.6.2").revisions).default;
         "exceptions".revision = (((hackage."exceptions")."0.10.4").revisions).default;
         "optparse-applicative".revision = (((hackage."optparse-applicative")."0.17.0.0").revisions).default;
         "optparse-applicative".flags.process = true;
         "hostname".revision = (((hackage."hostname")."1.0").revisions).default;
-        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.0.3").revisions).default;
+        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.0.4").revisions).default;
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
         "ghc-lib-parser-ex".flags.auto = true;
         "rts".revision = (((hackage."rts")."1.0.2").revisions).default;

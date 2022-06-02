@@ -39,7 +39,7 @@
         "unbounded-delays".revision = (((hackage."unbounded-delays")."0.1.1.1").revisions).default;
         "base-orphans".revision = (((hackage."base-orphans")."0.8.6").revisions).default;
         "ghc-bignum".revision = (((hackage."ghc-bignum")."1.1").revisions).default;
-        "primitive".revision = (((hackage."primitive")."0.7.3.0").revisions).default;
+        "primitive".revision = (((hackage."primitive")."0.7.4.0").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.6.2").revisions).default;
         "optparse-applicative".revision = (((hackage."optparse-applicative")."0.17.0.0").revisions).default;
         "optparse-applicative".flags.process = true;

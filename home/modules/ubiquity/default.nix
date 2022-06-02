@@ -13,7 +13,7 @@ in
         ./theme
     ];
 
-    home.stateVersion = "21.11";
+    home.stateVersion = "22.05";
 
     nixpkgs.config = infra.np.config;
     nixpkgs.overlays = infra.np.overlays;

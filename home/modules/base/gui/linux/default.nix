@@ -31,7 +31,7 @@ in
     services.flameshot = import services/flameshot config;
     services.gammastep.enable = true;
     services.gammastep.provider = "geoclue2";
-    services.gromit-mpx.enable = true;
+    services.gromit-mpx.enable = false;  # DESIGN: just gets in the way mostly
     services.xsuspender = import services/xsuspender;
 
     xresources = import ./xresources config pkgs;

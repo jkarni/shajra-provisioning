@@ -109,7 +109,7 @@ in {
     services.avahi.publish.addresses = true;
     services.avahi.publish.domain = true;
     services.avahi.publish.enable = true;
-    services.dbus.packages = [ pkgs.gnome3.dconf ];
+    services.dbus.packages = [ pkgs.dconf ];
     services.geoclue2.enable = true;
     services.locate.enable = true;
     services.logind.lidSwitchDocked = "ignore";
@@ -165,6 +165,8 @@ in {
     services.xserver.windowManager.i3.enable = true;
     services.xserver.xkbOptions = "lv3:ralt_switch_multikey";
     services.xserver.xkbVariant = "altgr-intl";
+
+    system.stateVersion = "22.05";
 
     time.timeZone = "US/Central";
 
