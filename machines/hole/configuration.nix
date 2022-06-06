@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
 
@@ -12,14 +12,13 @@ in {
 
     imports = [
         ./hardware-configuration.nix
+        ./nvidia-off.nix
     ];
 
     boot.initrd.luks.devices.crypted.device =
         "/dev/disk/by-uuid/36cc4851-8905-48e0-bce6-70f13062619e";
 
-    boot.kernel.sysctl = {
-        "net.ipv4.ip_forward" = 0;
-    };
+    boot.kernel.sysctl = { "net.ipv4.ip_forward" = 0; };
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.systemd-boot.enable = true;
@@ -41,12 +40,15 @@ in {
     hardware.cpu.intel.updateMicrocode = true;
     hardware.enableRedistributableFirmware = true;
     hardware.keyboard.zsa.enable = true;
+    hardware.opengl.enable = true;
+    hardware.opengl.extraPackages = with pkgs; [
+        libvdpau-va-gl
+        vaapiVdpau
+    ];
     hardware.pulseaudio.enable = true;
     hardware.pulseaudio.daemon.config = { enable-deferred-volume = "no"; };
     hardware.sane.enable = true;
     hardware.sane.extraBackends = [ pkgs.gutenprint hplip ];
-    #hardware.bumblebee.enable = true;
-    #hardware.bumblebee.connectDisplay = true;
 
     location.latitude = 30.2672;
     location.longitude = -97.7431;
@@ -124,6 +126,7 @@ in {
     services.printing.enable = true;
     services.tlp.enable = true;
     services.upower.enable = true;
+    services.upower.criticalPowerAction = "Hibernate";
     services.xserver.displayManager.autoLogin.enable = true;
     services.xserver.displayManager.autoLogin.user = user;
     services.xserver.displayManager.defaultSession = "none+i3";
@@ -166,7 +169,7 @@ in {
     services.xserver.xkbOptions = "lv3:ralt_switch_multikey";
     services.xserver.xkbVariant = "altgr-intl";
 
-    system.stateVersion = "22.05";
+    system.stateVersion = "21.11";
 
     time.timeZone = "US/Central";
 
