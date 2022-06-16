@@ -37,6 +37,7 @@
         "iterm2"
         "karabiner-elements"
         "slack"
+        "vivaldi"
         "wireshark"
         "zoom"
 
