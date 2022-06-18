@@ -69,6 +69,7 @@ let
         "fontpreview"
         "gnome3.adwaita-icon-theme"
         "maim"
+        "microsoft-edge"
         "pavucontrol"
         "simple-scan"
         "sxiv"

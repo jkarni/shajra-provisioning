@@ -36,6 +36,7 @@
         "google-chrome-beta"
         "iterm2"
         "karabiner-elements"
+        "microsoft-edge"
         "slack"
         "vivaldi"
         "wireshark"
