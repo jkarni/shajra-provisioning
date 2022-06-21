@@ -70,7 +70,7 @@ delta:
         github.user = "shajra";
         init.defaultBranch = "main";
         pull.rebase = true;
-        push.default = "upstream";
+        push.default = "simple";
         status.submodulesummary = true;
     };
     ignores = [
