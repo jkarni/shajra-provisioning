@@ -3,6 +3,8 @@ i3-dpi:
 let
     DP-1 = import ./fingerprint.DP-1.nix;
     eDP-1  = import ./fingerprint.eDP-1.nix;
+    dpi.home   = 160;
+    dpi.laptop = 235;
 in
 
 {
@@ -14,7 +16,7 @@ in
             HDMI-2.enable = false;
             DP-1 = {
                 enable = true;
-                dpi = 140;
+                dpi = dpi.home;
                 primary = true;
                 position = "0x0";
                 mode = "3840x2160";
@@ -22,7 +24,7 @@ in
             };
         };
         hooks.preswitch = ''
-            ${i3-dpi}/bin/i3-dpi 140
+            ${i3-dpi}/bin/i3-dpi ${builtins.toString dpi.home}
         '';
     };
     laptop = {
@@ -33,7 +35,7 @@ in
             HDMI-2.enable = false;
             eDP-1 = {
                 enable = true;
-                dpi = 235;
+                dpi = dpi.laptop;
                 primary = true;
                 position = "0x0";
                 mode = "3200x1800";
@@ -41,7 +43,7 @@ in
             };
         };
         hooks.preswitch = ''
-            ${i3-dpi}/bin/i3-dpi 235
+            ${i3-dpi}/bin/i3-dpi ${builtins.toString dpi.laptop}
         '';
     };
 }
