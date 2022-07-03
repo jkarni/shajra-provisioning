@@ -8,7 +8,7 @@
         "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
-        "vector".revision = (((hackage."vector")."0.12.3.1").revisions).default;
+        "vector".revision = (((hackage."vector")."0.13.0.0").revisions).default;
         "vector".flags.internalchecks = false;
         "vector".flags.wall = false;
         "vector".flags.boundschecks = true;
@@ -30,6 +30,7 @@
         "void".flags.safe = false;
         "call-stack".revision = (((hackage."call-stack")."0.4.0").revisions).default;
         "ghc-prim".revision = (((hackage."ghc-prim")."0.7.0").revisions).default;
+        "vector-stream".revision = (((hackage."vector-stream")."0.1.0.0").revisions).default;
         "ghc-boot-th".revision = (((hackage."ghc-boot-th")."9.0.2").revisions).default;
         "base".revision = (((hackage."base")."4.15.1.0").revisions).default;
         "time".revision = (((hackage."time")."1.9.3").revisions).default;
@@ -57,7 +58,7 @@
         "hashable".flags.containers = true;
         "hashable".flags.random-initial-seed = false;
         "hashable".flags.integer-gmp = true;
-        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.1").revisions).default;
+        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.2").revisions).default;
         "transformers-compat".flags.two = false;
         "transformers-compat".flags.mtl = true;
         "transformers-compat".flags.four = false;
@@ -151,6 +152,7 @@
           "primitive".components.library.planned = lib.mkOverride 900 true;
           "text".components.library.planned = lib.mkOverride 900 true;
           "base".components.library.planned = lib.mkOverride 900 true;
+          "vector-stream".components.library.planned = lib.mkOverride 900 true;
           "tasty".components.library.planned = lib.mkOverride 900 true;
           "transformers-compat".components.library.planned = lib.mkOverride 900 true;
           "colour".components.library.planned = lib.mkOverride 900 true;

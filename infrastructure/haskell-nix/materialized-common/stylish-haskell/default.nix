@@ -17,7 +17,7 @@
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
         "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.3.20220527").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
-        "vector".revision = (((hackage."vector")."0.12.3.1").revisions).default;
+        "vector".revision = (((hackage."vector")."0.13.0.0").revisions).default;
         "vector".flags.internalchecks = false;
         "vector".flags.wall = false;
         "vector".flags.boundschecks = true;
@@ -60,6 +60,7 @@
         "HsYAML".flags.exe = false;
         "call-stack".revision = (((hackage."call-stack")."0.4.0").revisions).default;
         "ghc-prim".revision = (((hackage."ghc-prim")."0.7.0").revisions).default;
+        "vector-stream".revision = (((hackage."vector-stream")."0.1.0.0").revisions).default;
         "ghc-boot-th".revision = (((hackage."ghc-boot-th")."9.0.2").revisions).default;
         "indexed-traversable".revision = (((hackage."indexed-traversable")."0.1.2").revisions).default;
         "distributive".revision = (((hackage."distributive")."0.6.2.1").revisions).default;
@@ -99,9 +100,9 @@
         "optparse-applicative".revision = (((hackage."optparse-applicative")."0.17.0.0").revisions).default;
         "optparse-applicative".flags.process = true;
         "hostname".revision = (((hackage."hostname")."1.0").revisions).default;
-        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.0.4").revisions).default;
+        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.1.0").revisions).default;
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
-        "ghc-lib-parser-ex".flags.auto = true;
+        "ghc-lib-parser-ex".flags.auto = false;
         "rts".revision = (((hackage."rts")."1.0.2").revisions).default;
         "semialign".revision = (((hackage."semialign")."1.2.0.1").revisions).default;
         "semialign".flags.semigroupoids = true;
@@ -121,7 +122,7 @@
         "hashable".flags.containers = true;
         "hashable".flags.random-initial-seed = false;
         "hashable".flags.integer-gmp = true;
-        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.1").revisions).default;
+        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.2").revisions).default;
         "transformers-compat".flags.two = false;
         "transformers-compat".flags.mtl = true;
         "transformers-compat".flags.four = false;
@@ -265,6 +266,7 @@
           "unordered-containers".components.library.planned = lib.mkOverride 900 true;
           "random".components.library.planned = lib.mkOverride 900 true;
           "base".components.library.planned = lib.mkOverride 900 true;
+          "vector-stream".components.library.planned = lib.mkOverride 900 true;
           "integer-logarithms".components.library.planned = lib.mkOverride 900 true;
           "transformers-compat".components.library.planned = lib.mkOverride 900 true;
           "colour".components.library.planned = lib.mkOverride 900 true;

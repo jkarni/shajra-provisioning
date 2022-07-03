@@ -11,7 +11,7 @@
     flags = { profile = false; };
     package = {
       specVersion = "1.10";
-      identifier = { name = "fast-tags"; version = "2.0.1"; };
+      identifier = { name = "fast-tags"; version = "2.0.2"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Evan Laforge <qdunkan@gmail.com>";

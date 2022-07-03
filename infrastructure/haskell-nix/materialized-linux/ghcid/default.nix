@@ -69,7 +69,7 @@
         "cmdargs".revision = (((hackage."cmdargs")."0.10.21").revisions).default;
         "cmdargs".flags.quotation = true;
         "cmdargs".flags.testprog = false;
-        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.1").revisions).default;
+        "transformers-compat".revision = (((hackage."transformers-compat")."0.7.2").revisions).default;
         "transformers-compat".flags.two = false;
         "transformers-compat".flags.mtl = true;
         "transformers-compat".flags.four = false;

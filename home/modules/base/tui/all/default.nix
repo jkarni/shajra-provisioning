@@ -43,7 +43,6 @@ in
     programs.man.generateCaches = true;
     programs.neovim = import programs/neovim pkgs;
     programs.nnn.enable = true;
-    programs.nushell.enable = true;
     programs.readline = import programs/readline;
     programs.skim.enable = true;
     programs.starship = import programs/starship;
