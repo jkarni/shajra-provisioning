@@ -15,7 +15,7 @@
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
-        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.3.20220527").revisions).default;
+        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.3.20220709").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
         "vector".revision = (((hackage."vector")."0.13.0.0").revisions).default;
         "vector".flags.internalchecks = false;
