@@ -54,7 +54,7 @@
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
         "ansi-terminal".revision = (((hackage."ansi-terminal")."0.11.3").revisions).default;
         "ansi-terminal".flags.example = false;
-        "hashable".revision = (((hackage."hashable")."1.4.0.2").revisions).default;
+        "hashable".revision = (((hackage."hashable")."1.4.1.0").revisions).default;
         "hashable".flags.containers = true;
         "hashable".flags.random-initial-seed = false;
         "hashable".flags.integer-gmp = true;

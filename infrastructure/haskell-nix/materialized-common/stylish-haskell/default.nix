@@ -15,7 +15,7 @@
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
-        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.3.20220709").revisions).default;
+        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.2.4.20220729").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
         "vector".revision = (((hackage."vector")."0.13.0.0").revisions).default;
         "vector".flags.internalchecks = false;
@@ -76,7 +76,7 @@
         "random".revision = (((hackage."random")."1.2.1.1").revisions).default;
         "process".revision = (((hackage."process")."1.6.13.2").revisions).default;
         "regex-base".revision = (((hackage."regex-base")."0.94.0.2").revisions).default;
-        "th-abstraction".revision = (((hackage."th-abstraction")."0.4.3.0").revisions).default;
+        "th-abstraction".revision = (((hackage."th-abstraction")."0.4.4.0").revisions).default;
         "semigroupoids".revision = (((hackage."semigroupoids")."5.3.7").revisions).default;
         "semigroupoids".flags.tagged = true;
         "semigroupoids".flags.containers = true;
@@ -100,7 +100,7 @@
         "optparse-applicative".revision = (((hackage."optparse-applicative")."0.17.0.0").revisions).default;
         "optparse-applicative".flags.process = true;
         "hostname".revision = (((hackage."hostname")."1.0").revisions).default;
-        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.1.0").revisions).default;
+        "ghc-lib-parser-ex".revision = (((hackage."ghc-lib-parser-ex")."9.2.1.1").revisions).default;
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
         "ghc-lib-parser-ex".flags.auto = false;
         "rts".revision = (((hackage."rts")."1.0.2").revisions).default;
@@ -118,7 +118,7 @@
         "test-framework-hunit".revision = (((hackage."test-framework-hunit")."0.3.0.2").revisions).default;
         "test-framework-hunit".flags.base3 = false;
         "test-framework-hunit".flags.base4 = true;
-        "hashable".revision = (((hackage."hashable")."1.4.0.2").revisions).default;
+        "hashable".revision = (((hackage."hashable")."1.4.1.0").revisions).default;
         "hashable".flags.containers = true;
         "hashable".flags.random-initial-seed = false;
         "hashable".flags.integer-gmp = true;
