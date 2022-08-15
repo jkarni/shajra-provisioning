@@ -3,100 +3,159 @@
 
 (doom!
 
- :completion
- company
- helm
- ivy  ; alternative to ido
+  :completion
+  company           ; the ultimate code completion backend
+  vertico           ; the search engine of the future
 
- :ui
- doom
- doom-dashboard
- doom-quit
- fill-column
- hl-todo
- hydra
- indent-guides
- (ligatures
-  ;;+extra  ; removed to streamline Emacs performance
+  :ui
+  doom              ; what makes DOOM look the way it does
+  doom-dashboard    ; a nifty splash screen for Emacs
+  ;;doom-quit       ; DOOM quit-message prompts when you quit Emacs
+  (emoji +unicode)  ; 🙂
+  hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+  indent-guides     ; highlighted indent columns
+  (ligatures        ; ligatures and symbols to make your code pretty again
+    ;;+extra        ; removed to stremline performance
   )
- modeline
- nav-flash
- ophints
- (popup +all +defaults)
- treemacs  ; alternative to neotree
- unicode
- vc-gutter
- vi-tilde-fringe
- window-select
- ;;workspaces  ; didn't like, may try again later
+  modeline          ; snazzy, Atom-inspired modeline, plus API
+  nav-flash         ; blink cursor line after big motions
+  ophints           ; highlight the region an operation acts on
+  (popup +all)      ; tame sudden yet inevitable temporary windows
+  treemacs          ; a project drawer, like neotree but cooler
+  unicode           ; extended unicode support for various languages
+  vc-gutter         ; vcs diff in the fringe
+  vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+  window-select     ; visually switch windows
+  ;;workspaces      ; tab emulation, persistence & separate workspaces
+  zen               ; distraction-free coding or writing
 
- :editor
- (evil +everywhere)
- file-templates
- fold
- format
- multiple-cursors
- rotate-text
- snippets
- word-wrap
+  :editor
+  (evil +everywhere); come to the dark side, we have cookies
+  file-templates    ; auto-snippets for empty files
+  fold              ; (nigh) universal code folding
+  format            ; automated prettiness
+  multiple-cursors  ; editing in many places at once
+  objed             ; text object editing for the innocent
+  rotate-text       ; cycle region at point between text candidates
+  snippets          ; my elves. They type so I don't have to
+  word-wrap         ; soft wrapping with language-aware indent
 
- :checkers
- (spell +aspell)
- syntax
+  :emacs
+  dired             ; making dired pretty [functional]
+  electric          ; smarter, keyword-based electric-indent
+  ibuffer           ; interactive buffer management
+  undo              ; persistent, smarter undo for your inevitable mistakes
+  vc                ; version-control and Emacs, sitting in a tree
 
- :emacs
- dired
- electric
- ibuffer
- undo
- vc
+  :term
+  vterm             ; the best terminal emulation in Emacs
 
- :term
- vterm
-
- :tools
- ;;direnv
- emacs-direnv
- docker
- (eval +overlay)
- gist
- (lookup +docsets)
- (lsp +peek)
- ;;macos
- magit
- make
- rgb
-
- :os  ; macos, tty
-
- :lang
- ;;cc
- data
- dhall
- emacs-lisp
- (haskell +lsp)
- (haskell-extn +dante +lsp)
- latex
- markdown
- nix
- (org
-  +pretty
-  +hugo
-  ;;+pandoc
-  ;;+present
+  :checkers
+  grammar           ; tasing grammar mistake every you make
+  (spell            ; tasing you for misspelling mispelling
+    +aspell
+    +everywhere
   )
- ;;plantuml
- (python +lsp +pyright)
- rest
- (sh +fish)
- ;;web
- yaml
+  syntax            ; tasing you for every semicolon you forget
 
- :email  ; mu4e, notmuch, wanderlust
+  :tools
+  emacs-direnv
+  docker
+  (eval +overlay)   ; run code, run (also, repls)
+  gist              ; interacting with github gists
+  lookup            ; navigate your code and its documentation
+  (lsp +peek)       ; M-x vscode
+  magit             ; a git porcelain for Emacs
+  make              ; run make tasks from Emacs
+  rgb               ; creating color strings
+  taskrunner        ; taskrunner for all your projects
+  tmux              ; an API for interacting with tmux
+  tree-sitter       ; syntax and parsing, sitting in a tree...
 
- :app  ; calendar, irc, rss, twitter
+  :os
+  (:if IS-MAC macos) ; improve compatibility with macOS
+  tty                ; improve the terminal Emacs experience
 
- :config
- (default +bindings +smartparens)
- dir-locals
- )
+  :lang
+  (cc
+    ;;+lsp
+    +tree-sitter
+  )
+  ;;coq
+  data
+  ;;dhall
+  emacs-lisp
+  ;;(ess +lsp)
+  ;;(go +lsp +tree-sitter)
+  ;;(graphql +lsp)
+  (haskell +lsp)
+  (haskell-extn +dante +lsp)
+  ;;idris
+  (json
+    ;;+lsp
+    +tree-sitter
+  )
+  ;;(java +lsp +tree-sitter)
+  ;;(javascript +lsp +tree-sitter)
+  (latex
+    ;;+lsp
+  )
+  (markdown +grip)
+  (nix +tree-sitter)
+  ;;(ocaml +lsp +tree-sitter)
+  (org
+    ;;+hugo
+    +pretty
+    ;;+present
+  )
+  plantuml
+  ;;(purescript +lsp)
+  (python
+    ;;+conda
+    ;;+cython
+    ;;+lsp
+    ;;+poetry
+    ;;+pyright
+    +tree-sitter
+  )
+  (racket
+    ;;+lsp
+    ;;+xp
+  )
+  (rest +jq)
+  ;;(ruby +lsp +tree-sitter)
+  (rust
+    ;;+lsp
+  )
+  ;;(scala +lsp +tree-sitter)
+  (sh
+    +fish
+    ;;+lsp
+    +tree-sitter
+  )
+  ;;sml
+  (web
+    ;;+lsp
+    +tree-sitter
+  )
+  (yaml
+    ;;+lsp
+  )
+
+  :email
+  ;;(mu4e +org +gmail)
+  ;;notmuch
+  ;;(wanderlust +gmail)
+
+  :app
+  ;;calendar
+  ;;emms
+  ;;everywhere        ; *leave* Emacs!? You must be joking
+  ;;irc               ; how neckbeards socialize
+  ;;(rss +org)        ; emacs as an RSS reader
+  ;;twitter           ; twitter client https://twitter.com/vnought
+
+  :config
+  dir-locals
+  ;;literate
+  (default +bindings +smartparens))
