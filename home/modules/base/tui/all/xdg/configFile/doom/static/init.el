@@ -4,59 +4,58 @@
 (doom!
 
   :completion
-  company           ; the ultimate code completion backend
-  vertico           ; the search engine of the future
+  company             ; the ultimate code completion backend
+  vertico             ; the search engine of the future
 
   :ui
-  doom              ; what makes DOOM look the way it does
-  doom-dashboard    ; a nifty splash screen for Emacs
-  ;;doom-quit       ; DOOM quit-message prompts when you quit Emacs
-  (emoji +unicode)  ; 🙂
-  hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-  indent-guides     ; highlighted indent columns
-  (ligatures        ; ligatures and symbols to make your code pretty again
-    ;;+extra        ; removed to stremline performance
+  doom                ; what makes DOOM look the way it does
+  doom-dashboard      ; a nifty splash screen for Emacs
+  ;;doom-quit         ; DOOM quit-message prompts when you quit Emacs
+  (emoji +unicode)    ; 🙂
+  hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+  indent-guides       ; highlighted indent columns
+  (ligatures          ; ligatures and symbols to make your code pretty again
+    ;;+extra          ; removed to stremline performance
   )
-  modeline          ; snazzy, Atom-inspired modeline, plus API
-  nav-flash         ; blink cursor line after big motions
-  ophints           ; highlight the region an operation acts on
-  (popup +all)      ; tame sudden yet inevitable temporary windows
-  treemacs          ; a project drawer, like neotree but cooler
-  unicode           ; extended unicode support for various languages
-  vc-gutter         ; vcs diff in the fringe
-  vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-  window-select     ; visually switch windows
-  ;;workspaces      ; tab emulation, persistence & separate workspaces
-  zen               ; distraction-free coding or writing
+  modeline            ; snazzy, Atom-inspired modeline, plus API
+  nav-flash           ; blink cursor line after big motions
+  ophints             ; highlight the region an operation acts on
+  (popup +all)        ; tame sudden yet inevitable temporary windows
+  treemacs            ; a project drawer, like neotree but cooler
+  unicode             ; extended unicode support for various languages
+  (vc-gutter +pretty) ; vcs diff in the fringe
+  vi-tilde-fringe     ; fringe tildes to mark beyond EOB
+  window-select       ; visually switch windows
+  ;;workspaces        ; tab emulation, persistence & separate workspaces
+  zen                 ; distraction-free coding or writing
 
   :editor
-  (evil +everywhere); come to the dark side, we have cookies
-  file-templates    ; auto-snippets for empty files
-  fold              ; (nigh) universal code folding
-  format            ; automated prettiness
-  multiple-cursors  ; editing in many places at once
-  objed             ; text object editing for the innocent
-  rotate-text       ; cycle region at point between text candidates
-  snippets          ; my elves. They type so I don't have to
-  word-wrap         ; soft wrapping with language-aware indent
+  (evil +everywhere)  ; come to the dark side, we have cookies
+  file-templates      ; auto-snippets for empty files
+  fold                ; (nigh) universal code folding
+  format              ; automated prettiness
+  multiple-cursors    ; editing in many places at once
+  rotate-text         ; cycle region at point between text candidates
+  snippets            ; my elves. They type so I don't have to
+  word-wrap           ; soft wrapping with language-aware indent
 
   :emacs
-  dired             ; making dired pretty [functional]
-  electric          ; smarter, keyword-based electric-indent
-  ibuffer           ; interactive buffer management
-  undo              ; persistent, smarter undo for your inevitable mistakes
-  vc                ; version-control and Emacs, sitting in a tree
+  dired               ; making dired pretty [functional]
+  electric            ; smarter, keyword-based electric-indent
+  ibuffer             ; interactive buffer management
+  undo                ; persistent, smarter undo for your inevitable mistakes
+  vc                  ; version-control and Emacs, sitting in a tree
 
   :term
-  vterm             ; the best terminal emulation in Emacs
+  vterm               ; the best terminal emulation in Emacs
 
   :checkers
-  grammar           ; tasing grammar mistake every you make
-  (spell            ; tasing you for misspelling mispelling
+  grammar             ; tasing grammar mistake every you make
+  (spell              ; tasing you for misspelling mispelling
     +aspell
     +everywhere
   )
-  syntax            ; tasing you for every semicolon you forget
+  syntax              ; tasing you for every semicolon you forget
 
   :tools
   emacs-direnv
@@ -101,7 +100,9 @@
     ;;+lsp
   )
   (markdown +grip)
-  (nix +tree-sitter)
+  (nix
+    +tree-sitter
+  )
   ;;(ocaml +lsp +tree-sitter)
   (org
     ;;+hugo
