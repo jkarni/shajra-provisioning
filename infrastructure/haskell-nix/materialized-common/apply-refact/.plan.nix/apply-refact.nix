@@ -11,7 +11,7 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "apply-refact"; version = "0.9.3.0"; };
+      identifier = { name = "apply-refact"; version = "0.10.0.0"; };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "matthewtpickering@gmail.com";
@@ -44,6 +44,7 @@
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+          (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
@@ -53,7 +54,6 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           ];
         buildable = true;
         modules = [
@@ -73,6 +73,7 @@
             (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
@@ -111,6 +112,7 @@
             (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
+            (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))

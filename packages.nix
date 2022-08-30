@@ -191,9 +191,8 @@ let
                 "stack"
             ];
             unstable = pickUnstable [
-                "haskell.compiler.ghc902"
-                "haskell.packages.ghc902.apply-refact"
-                "haskell.packages.ghc902.hlint"
+                "haskell.compiler.ghc924"
+                "haskellPackages.djinn"
             ];
         in home // unstable;
 
@@ -277,12 +276,11 @@ let
     ];
 
     nixpkgs.build.programming.haskell = {}
-        // (np.hs.fromPackages "unstable" "ghc902" "djinn")
-        // (np.hs.fromPackages "unstable" "ghc902" "ghc-events")
-        // (np.hs.fromPackages "unstable" "ghc902" "haskdogs")
-        // (np.hs.fromPackages "unstable" "ghc902" "hasktags")
-        // (np.hs.fromPackages "unstable" "ghc902" "hoogle")
-        // (np.hs.fromPackages "unstable" "ghc902" "hp2pretty")
+        // (np.hs.fromPackages "unstable" "ghc924" "ghc-events")
+        // (np.hs.fromPackages "unstable" "ghc924" "haskdogs")
+        // (np.hs.fromPackages "unstable" "ghc924" "hasktags")
+        // (np.hs.fromPackages "unstable" "ghc924" "hoogle")
+        // (np.hs.fromPackages "unstable" "ghc924" "hp2pretty")
 
         # DESIGN: marked broken, 2022-04-15
         #// (np.hs.fromPackages "unstable" "ghc902" "threadscope")
@@ -305,26 +303,26 @@ let
 
     haskell-nix.build.programming.haskell = when (! isDevBuild) (
         {}
-        // (hn.fromHackage "ghc902" "fast-tags")
-        // (hn.fromHackage "ghc902" "ghcid")
-        // (hn.fromHackage "ghc902" "stylish-haskell")
+        // (hn.fromHackage "ghc924" "fast-tags")
+        // (hn.fromHackage "ghc924" "ghcid")
+        // (hn.fromHackage "ghc924" "apply-refact")
+        // (hn.fromHackage "ghc924" "hlint")
 
-        # DESIGN: latest moved to GHC 9.2, Nixpkgs is enough
-        #// (hn.fromHackage "ghc902" "apply-refact")
-        #// (hn.fromHackage "ghc902" "hlint")
+        # DESIGN: stylish-haskell broken on GHC 9.2.4, 22-08-29
+        #// (hn.fromHackage "ghc924" "stylish-haskell")
 
         # DESIGN: marked broken in Nixpkgs, doesn't seem to build with
         # Haskell.nix either
-        #// (hn.fromHackage "ghc902" "ghc-events-analyze")
+        #// (hn.fromHackage "ghc924" "ghc-events-analyze")
     );
 
     haskell-nix.build.updateMaterialized = when (! isDevBuild) (
         {}
-        // (hn.hackageUpdateMaterialized "ghc902" "fast-tags")
-        // (hn.hackageUpdateMaterialized "ghc902" "ghcid")
-        // (hn.hackageUpdateMaterialized "ghc902" "stylish-haskell")
-        #// (hn.hackageUpdateMaterialized "ghc902" "apply-refact")
-        #// (hn.hackageUpdateMaterialized "ghc902" "hlint")
+        // (hn.hackageUpdateMaterialized "ghc924" "fast-tags")
+        // (hn.hackageUpdateMaterialized "ghc924" "ghcid")
+        #// (hn.hackageUpdateMaterialized "ghc924" "stylish-haskell")
+        // (hn.hackageUpdateMaterialized "ghc924" "apply-refact")
+        // (hn.hackageUpdateMaterialized "ghc924" "hlint")
     );
 
     shajra.build.programming.haskell =

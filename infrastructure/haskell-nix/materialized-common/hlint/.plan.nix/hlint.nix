@@ -11,7 +11,7 @@
     flags = { threaded = true; gpl = true; ghc-lib = false; hsyaml = false; };
     package = {
       specVersion = "1.18";
-      identifier = { name = "hlint"; version = "3.4"; };
+      identifier = { name = "hlint"; version = "3.4.1"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2022";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -71,6 +71,7 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."refact" or (errorHandler.buildDepError "refact"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."deriving-aeson" or (errorHandler.buildDepError "deriving-aeson"))
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
           ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.2.2") && (compiler.isGhc && (compiler.version).lt "9.3.0")
