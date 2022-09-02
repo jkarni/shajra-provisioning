@@ -24,18 +24,24 @@ let
     allExes = pkg: pkg.components.exes;
 
     planConfigFor = ghcVersion: name: modules:
-        let materializedBase =
+        let
+            materializationBase =
+                if checkMaterialization
+                then "${sources.shajra-provisioning}/infrastructure/haskell.nix"
+                else toString ./.;
+            materializedPlatform =
                 if builtins.elem name infraConfig.haskell-nix.platformSensitive
                 then
                     if isDarwin
-                    then ./materialized-darwin
-                    else ./materialized-linux
-                else ./materialized-common;
-            materialized = materializedBase + "/${name}";
+                    then "materialized-darwin"
+                    else "materialized-linux"
+                else "materialized-common";
+            materialized = "${materializationBase}/${materializedPlatform}/${name}";
             index-state = infraConfig.haskell-nix.hackage.index.state or null;
             index-sha256 = infraConfig.haskell-nix.hackage.index.sha256 or null;
         in {
-            inherit name modules materialized checkMaterialization;
+            inherit name modules checkMaterialization;
+            materialized = builtins.trace "SHAJRA: ${materialized}" materialized;
             compiler-nix-name = ghcVersion;
             ${if isNull index-state then null else "index-state"} = index-state;
             ${if isNull index-sha256 then null else "index-sha256"} = index-sha256;
