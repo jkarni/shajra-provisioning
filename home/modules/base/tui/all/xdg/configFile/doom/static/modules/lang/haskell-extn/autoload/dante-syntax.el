@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;;###if (and (featurep! +dante) (featurep! :checkers syntax))
+;;;###if (and (modulep! +dante) (modulep! :checkers syntax))
 
 
 ;;;###autoload

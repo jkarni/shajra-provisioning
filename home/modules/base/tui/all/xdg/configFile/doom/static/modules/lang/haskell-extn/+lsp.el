@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;;###if (featurep! +lsp)
+;;;###if (modulep! +lsp)
 
 
 (add-hook! haskell-literate-mode #'lsp!)

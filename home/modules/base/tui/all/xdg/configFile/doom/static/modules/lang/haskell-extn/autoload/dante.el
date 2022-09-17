@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;;###if (featurep! +dante)
+;;;###if (modulep! +dante)
 
 
 ;;;###autoload

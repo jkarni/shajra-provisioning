@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;;###if (and (featurep! +dante) (featurep! :config dir-locals))
+;;;###if (and (modulep! +dante) (modulep! :config dir-locals))
 
 
 ;;;###autoload

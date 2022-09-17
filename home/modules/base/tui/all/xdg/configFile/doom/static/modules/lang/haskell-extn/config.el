@@ -1,12 +1,12 @@
 ;;; -*- lexical-binding: t; -*-
 
 
-(when (or (featurep! +lsp) (featurep! +dante))
+(when (or (modulep! +lsp) (modulep! +dante))
 
   (defcustom +haskell-backend
     (cond
-     ((featurep! +lsp) 'lsp)
-     ((featurep! +dante) 'dante))
+     ((modulep! +lsp) 'lsp)
+     ((modulep! +dante) 'dante))
     "Backend to use for Haskell support.
 
 There's a variety of packages that support Haskell for Emacs.  There has always
@@ -48,8 +48,8 @@ Haskell's haskdogs and codex."
     (add-hook! haskell-mode-local-vars #'+haskell--checkers-disable-h)
     (add-hook! haskell-literate-mode #'+haskell--checkers-disable-h)))
 
-(when (featurep! +dante)
+(when (modulep! +dante)
   (load! "+dante"))
 
-(when (featurep! +lsp)
+(when (modulep! +lsp)
   (load! "+lsp"))

@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t; -*-
-;;;###if (featurep! +dante)
+;;;###if (modulep! +dante)
 
 
 ;;; variables
@@ -54,7 +54,7 @@ normal etags backend find references in the source of non-local dependencies."
 
   :config
 
-  (when (featurep! :checkers syntax)
+  (when (modulep! :checkers syntax)
     (+haskell/dante-hlint-on))
 
   (set-company-backend! 'dante-mode #'dante-company)
@@ -72,7 +72,7 @@ normal etags backend find references in the source of non-local dependencies."
       (apply fn args)
       (if modified-p (set-buffer-modified-p t))))
 
-  (when (featurep 'evil)
+  (when (modulep 'evil)
     (add-hook 'dante-mode-hook #'evil-normalize-keymaps))
 
   (map! :map dante-mode-map
