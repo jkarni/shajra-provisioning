@@ -10,7 +10,7 @@ let
 
     moneydance-lib = super.stdenv.mkDerivation rec {
         pname = "moneydance-lib";
-        version = "2022.3_4076";
+        version = "2022.5_4091";
         name = "${pname}-${version}";
         src = super.moneydance-dist;
         phases = [ "installPhase" ];
