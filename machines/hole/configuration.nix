@@ -19,7 +19,7 @@ in {
         "/dev/disk/by-uuid/36cc4851-8905-48e0-bce6-70f13062619e";
 
     boot.kernel.sysctl = { "net.ipv4.ip_forward" = 0; };
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    #boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.systemd-boot.enable = true;
 
