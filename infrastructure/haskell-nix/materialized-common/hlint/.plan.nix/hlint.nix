@@ -8,10 +8,10 @@
   , config
   , ... }:
   {
-    flags = { threaded = true; gpl = true; ghc-lib = false; hsyaml = false; };
+    flags = { threaded = true; gpl = true; ghc-lib = true; hsyaml = false; };
     package = {
       specVersion = "1.18";
-      identifier = { name = "hlint"; version = "3.4.1"; };
+      identifier = { name = "hlint"; version = "3.5"; };
       license = "BSD-3-Clause";
       copyright = "Neil Mitchell 2006-2022";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
@@ -74,7 +74,7 @@
           (hsPkgs."deriving-aeson" or (errorHandler.buildDepError "deriving-aeson"))
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.2.2") && (compiler.isGhc && (compiler.version).lt "9.3.0")
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.4.1") && (compiler.isGhc && (compiler.version).lt "9.5.0")
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))

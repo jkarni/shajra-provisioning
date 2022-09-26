@@ -11,9 +11,9 @@
     flags = {};
     package = {
       specVersion = "1.18";
-      identifier = { name = "ghcid"; version = "0.8.7"; };
+      identifier = { name = "ghcid"; version = "0.8.8"; };
       license = "BSD-3-Clause";
-      copyright = "Neil Mitchell 2014-2020";
+      copyright = "Neil Mitchell 2014-2022";
       maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
       author = "Neil Mitchell <ndmitchell@gmail.com>, jpmoresmau";
       homepage = "https://github.com/ndmitchell/ghcid#readme";
@@ -117,6 +117,7 @@
             "Paths_ghcid"
             "Session"
             "Test/API"
+            "Test/Common"
             "Test/Ghcid"
             "Test/Parser"
             "Test/Util"

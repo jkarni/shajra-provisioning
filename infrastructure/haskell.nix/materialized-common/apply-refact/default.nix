@@ -19,7 +19,7 @@
         "comonad".flags.distributive = true;
         "comonad".flags.indexed-traversable = true;
         "profunctors".revision = (((hackage."profunctors")."5.6.2").revisions).default;
-        "extra".revision = (((hackage."extra")."1.7.11").revisions).default;
+        "extra".revision = (((hackage."extra")."1.7.12").revisions).default;
         "contravariant".revision = (((hackage."contravariant")."1.5.5").revisions).default;
         "contravariant".flags.tagged = true;
         "contravariant".flags.semigroups = true;
@@ -59,7 +59,7 @@
         "distributive".flags.tagged = true;
         "distributive".flags.semigroups = true;
         "ghc-paths".revision = (((hackage."ghc-paths")."0.1.0.12").revisions).default;
-        "bifunctors".revision = (((hackage."bifunctors")."5.5.12").revisions).default;
+        "bifunctors".revision = (((hackage."bifunctors")."5.5.13").revisions).default;
         "bifunctors".flags.tagged = true;
         "bifunctors".flags.semigroups = true;
         "ghc-exactprint".revision = (((hackage."ghc-exactprint")."1.5.0").revisions).default;
@@ -75,7 +75,7 @@
         "transformers-base".flags.orphaninstances = true;
         "unbounded-delays".revision = (((hackage."unbounded-delays")."0.1.1.1").revisions).default;
         "data-default-class".revision = (((hackage."data-default-class")."0.1.2.0").revisions).default;
-        "th-abstraction".revision = (((hackage."th-abstraction")."0.4.4.0").revisions).default;
+        "th-abstraction".revision = (((hackage."th-abstraction")."0.4.5.0").revisions).default;
         "semigroupoids".revision = (((hackage."semigroupoids")."5.3.7").revisions).default;
         "semigroupoids".flags.tagged = true;
         "semigroupoids".flags.containers = true;
@@ -101,7 +101,7 @@
         "ghci".revision = (((hackage."ghci")."9.2.4").revisions).default;
         "tasty-golden".revision = (((hackage."tasty-golden")."2.3.5").revisions).default;
         "tasty-golden".flags.build-example = false;
-        "syb".revision = (((hackage."syb")."0.7.2.1").revisions).default;
+        "syb".revision = (((hackage."syb")."0.7.2.2").revisions).default;
         "uniplate".revision = (((hackage."uniplate")."1.6.13").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
         "filemanip".revision = (((hackage."filemanip")."0.3.6.3").revisions).default;

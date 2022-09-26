@@ -13,7 +13,7 @@ in
 {
     enable = true;
     iconTheme.name = "Adwaita";
-    iconTheme.package = pkgs.gnome3.adwaita-icon-theme;
+    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     settings = {
         global = {
             browser = "${config.programs.brave.package}/bin/brave";

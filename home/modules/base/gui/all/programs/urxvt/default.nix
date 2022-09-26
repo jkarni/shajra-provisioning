@@ -2,12 +2,16 @@ config: pkgs:
 
 {
     enable = true;
+
+    # DESIGN: home-manager pointing to obsolete attribute name
+    package = pkgs.rxvt-unicode-unwrapped;
+
     fonts = [
         "xft:${config.theme.fonts.monospaced.code.name}:size=11"
     ];
     extraConfig = {
         "perl-ext-common" = "default,font-size";
-        "perl-lib"        = "${pkgs.urxvt_font_size}/lib/urxvt/perl";
+        "perl-lib"        = "${pkgs.rxvt-unicode-plugins.font-size}/lib/urxvt/perl";
     };
     keybindings = {
         "Shift-C-C"             = "eval:selection_to_clipboard";

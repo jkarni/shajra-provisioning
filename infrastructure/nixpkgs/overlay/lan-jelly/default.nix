@@ -11,7 +11,7 @@ self.nix-project-lib.writeShellCheckedExe progName
     path = with self; [
         bind.host
         gnugrep
-        iproute
+        iproute2
         iptables
         nettools
     ];
