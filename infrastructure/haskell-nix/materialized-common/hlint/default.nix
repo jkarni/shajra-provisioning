@@ -15,7 +15,7 @@
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
         "text".revision = (((hackage."text")."1.2.5.0").revisions).default;
-        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.4.2.20220822").revisions).default;
+        "ghc-lib-parser".revision = (((hackage."ghc-lib-parser")."9.4.3.20221104").revisions).default;
         "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
         "vector".revision = (((hackage."vector")."0.13.0.0").revisions).default;
         "vector".flags.internalchecks = false;
@@ -67,7 +67,7 @@
         "unliftio-core".revision = (((hackage."unliftio-core")."0.2.0.1").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.2").revisions).default;
         "refact".revision = (((hackage."refact")."0.3.0.2").revisions).default;
-        "resourcet".revision = (((hackage."resourcet")."1.2.6").revisions).default;
+        "resourcet".revision = (((hackage."resourcet")."1.3.0").revisions).default;
         "data-default-instances-old-locale".revision = (((hackage."data-default-instances-old-locale")."0.0.1").revisions).default;
         "data-default".revision = (((hackage."data-default")."0.7.1.1").revisions).default;
         "ghc-prim".revision = (((hackage."ghc-prim")."0.8.0").revisions).default;
@@ -88,7 +88,7 @@
         "random".revision = (((hackage."random")."1.2.1.1").revisions).default;
         "process".revision = (((hackage."process")."1.6.13.2").revisions).default;
         "utf8-string".revision = (((hackage."utf8-string")."1.0.2").revisions).default;
-        "conduit".revision = (((hackage."conduit")."1.3.4.2").revisions).default;
+        "conduit".revision = (((hackage."conduit")."1.3.4.3").revisions).default;
         "data-default-class".revision = (((hackage."data-default-class")."0.1.2.0").revisions).default;
         "vector-algorithms".revision = (((hackage."vector-algorithms")."0.9.0.1").revisions).default;
         "vector-algorithms".flags.internalchecks = false;

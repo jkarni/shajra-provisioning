@@ -307,9 +307,7 @@ let
         // (hn.fromHackage "ghc924" "ghcid")
         // (hn.fromHackage "ghc924" "apply-refact")
         // (hn.fromHackage "ghc924" "hlint")
-
-        # DESIGN: stylish-haskell broken on GHC 9.2.4, 22-08-29
-        #// (hn.fromHackage "ghc924" "stylish-haskell")
+        // (hn.fromHackageCustomized "ghc924" "stylish-haskell" { configureArgs = "-f ghc-lib"; })
 
         # DESIGN: marked broken in Nixpkgs, doesn't seem to build with
         # Haskell.nix either
@@ -320,9 +318,9 @@ let
         {}
         // (hn.hackageUpdateMaterialized "ghc924" "fast-tags")
         // (hn.hackageUpdateMaterialized "ghc924" "ghcid")
-        #// (hn.hackageUpdateMaterialized "ghc924" "stylish-haskell")
         // (hn.hackageUpdateMaterialized "ghc924" "apply-refact")
         // (hn.hackageUpdateMaterialized "ghc924" "hlint")
+        // (hn.hackageUpdateMaterializedCustomized "ghc924" "stylish-haskell" { configureArgs = "-f ghc-lib"; })
     );
 
     shajra.build.programming.haskell =

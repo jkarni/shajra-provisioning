@@ -9,7 +9,7 @@ in
 
 {
     enable = true;
-    skin = {
+    settings.skin = {
 
         # DESIGN: This is taken from broot source code (src/skin/style_map.rs)
 

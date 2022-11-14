@@ -84,7 +84,7 @@
         "semigroupoids".flags.contravariant = true;
         "semigroupoids".flags.comonad = true;
         "data-default-instances-containers".revision = (((hackage."data-default-instances-containers")."0.0.1").revisions).default;
-        "ordered-containers".revision = (((hackage."ordered-containers")."0.2.2").revisions).default;
+        "ordered-containers".revision = (((hackage."ordered-containers")."0.2.3").revisions).default;
         "base-orphans".revision = (((hackage."base-orphans")."0.8.7").revisions).default;
         "ghc-bignum".revision = (((hackage."ghc-bignum")."1.2").revisions).default;
         "typed-process".revision = (((hackage."typed-process")."0.2.10.1").revisions).default;
