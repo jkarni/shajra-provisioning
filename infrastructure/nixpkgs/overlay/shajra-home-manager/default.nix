@@ -124,6 +124,11 @@ new_style_env()
 manage()
 {
     local config="${sources.shajra-provisioning}/home/target/$TARGET"
+    local dbus_default; dbus_default="/run/user/$(id -u)/bus"
+    local dbus_found=""
+    if [ -e "$dbus_default" ]
+    then dbus_found="$dbus_default"
+    fi
     if $SLIM
     then config="$config/slim.nix"
     fi
@@ -131,7 +136,7 @@ manage()
         HOME="$HOME" \
         PATH="$PATH" \
         TERM="$TERM" \
-        DBUS_SESSION_BUS_ADDRESS="''${DBUS_SESSION_BUS_ADDRESS:-}" \
+        DBUS_SESSION_BUS_ADDRESS="''${DBUS_SESSION_BUS_ADDRESS:-unix:path=''${dbus_found}}" \
         TERMINFO="''${TERMINFO:-}" \
         USER="$USER" \
         NIX_PATH="nixpkgs=${sources.nixpkgs-home}" \
