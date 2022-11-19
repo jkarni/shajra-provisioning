@@ -29,7 +29,15 @@ ROUTER_MAC=ac:3b:77:45:fe:b0
 
 main()
 {
-    if is_online && at_home
+    if [ "''${1:-}" = home ]
+    then
+        echo "INFO: routing Jelly locally"
+        iptables_rule_add
+    elif [ "''${1:-}" = remote ]
+    then
+        echo "INFO: routing Jelly remotely"
+        iptables_rule_remove
+    elif is_online && at_home
     then
         echo "INFO: at home, routing Jelly locally"
         iptables_rule_add
