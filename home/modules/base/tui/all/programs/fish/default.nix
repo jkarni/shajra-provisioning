@@ -80,7 +80,7 @@ in
         system-info = {
             description = "A summary of system information";
             body = ''
-                "${pkgs.macchina}/bin/macchina" --theme shajra
+                "${config.programs.macchina.package}/bin/macchina" --theme shajra
                 # DESIGN: not messing with color_bars for now
                 #"${pkgs.coreutils}/bin/cat" "${./color_bars.txt}"
             '';

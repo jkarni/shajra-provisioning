@@ -57,7 +57,7 @@
         #     - "unstable": nixpkgs-unstable
         pkgs = {
             system = {
-                darwin = "unstable";
+                darwin = "stable-darwin";
                 linux = "stable-linux";
             };
             home = {

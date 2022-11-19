@@ -82,7 +82,7 @@ let
         "zoom-us"
 
         # Fonts
-        # DESIGN: made Linux-only because of a build problem, 2021-09-21
+        # DESIGN: 2021-09-21: made Linux-only because of a build problem
         "twitter-color-emoji"        # for emojis
     ];
 
@@ -102,7 +102,6 @@ let
         "file"
         "gnugrep"
         "gnupg"  # TODO: home-manager
-        "macchina"
         "nix-diff"
         "nixfmt"
         "paperkey"
@@ -122,10 +121,15 @@ let
     nixpkgs.prebuilt.base.tui.linux = np.pick { linux = "unstable"; } [
         "entr"
         "fswatch"
+        "macchina"
         "niv"
         "pciutils"
         "powertop"
         "usbutils"
+    ];
+
+    nixpkgs.prebuilt.base.tui.darwin = np.pick { darwin = "stable"; } [
+        "macchina"  # DESIGN: 2022-11-15: broke on nixpkgs-unstable
     ];
 
     nixpkgs.prebuilt.chat.gui.all = pickHome [
@@ -160,8 +164,7 @@ let
         "inkscape"
         "peek"
 
-        # DESIGN: broken for Darwin, 2022-04-15
-        "libreoffice"
+        "libreoffice"  # DESIGN: 2022-04-15: broke for Darwin
     ];
 
     nixpkgs.prebuilt.programming.c.all = pickHome [

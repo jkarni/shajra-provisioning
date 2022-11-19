@@ -9,4 +9,6 @@ in {
 
     home.activation = import home/activation config lib pkgs;
     home.extraPackages = build.pkgs.base.tui.darwin;
+
+    programs.macchina.package = build.pkgSets.base.tui.darwin.macchina;
 }

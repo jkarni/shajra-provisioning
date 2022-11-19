@@ -52,5 +52,6 @@ let
         // (include "build"    "shajra"     );
 
     pkgs = pkgsBuild.categorized.lists;
+    pkgSets = pkgsBuild.categorized.sets;
 
-in { inherit infra home ci pkgs sources updateMaterialized; }
+in { inherit infra home ci pkgs pkgSets sources updateMaterialized; }
