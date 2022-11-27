@@ -30,6 +30,7 @@
                 "ghcid"
             ];
             # DESIGN: https://github.com/input-output-hk/hackage.nix/blob/master/index-state-hashes.nix
+            # DESIGN: due to a bug in Haskell.nix materialization, sources.json locks Haskell.nix to tag 0.0.94
             hackage.index = {
                 state = "2022-11-12T00:00:00Z";
                 sha256 = "af6cf71eae11910ae03f9f35906691941d8d976b9c4e5fb28d5da9b8c5606ed8";

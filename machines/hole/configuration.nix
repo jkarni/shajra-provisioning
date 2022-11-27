@@ -67,27 +67,27 @@ in {
     networking.wireless.interfaces = [ "wlp6s0" ];
     networking.wireless.userControlled.enable = true;
 
-    nix.autoOptimiseStore = true;
-    nix.binaryCaches = [
+    nix.extraOptions = ''
+        experimental-features = nix-command flakes
+    '';
+    nix.package = pkgs.nixFlakes;
+    nix.settings.auto-optimise-store = true;
+    nix.settings.sandbox = "relaxed";
+    nix.settings.substituters = [
         "https://haskell-language-server.cachix.org"
         "https://hydra.iohk.io"
         "https://niv.cachix.org"
         "https://nix-community.cachix.org"
         "https://shajra.cachix.org"
     ];
-    nix.binaryCachePublicKeys = [
+    nix.settings.trusted-public-keys = [
         "haskell-language-server.cachix.org-1:juFfHrwkOxqIOZShtC4YC1uT1bBcq2RSvC7OMKx0Nz8="
         "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
         "niv.cachix.org-1:X32PCg2e/zAm3/uD1ScqW2z/K0LtDyNV7RdaxIuLgQM="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "shajra.cachix.org-1:V0x7Wjgd/mHGk2KQwzXv8iydfIgLupbnZKLSQt5hh9o="
     ];
-    nix.extraOptions = ''
-        experimental-features = nix-command flakes
-    '';
-    nix.package = pkgs.nixFlakes;
-    nix.trustedUsers = [ "root" user ];
-    nix.useSandbox = "relaxed";
+    nix.settings.trusted-users = [ "root" user ];
 
     nixpkgs.config = infra.np.config;
     nixpkgs.overlays = infra.np.overlays;
@@ -169,7 +169,7 @@ in {
     services.xserver.xkbOptions = "lv3:ralt_switch_multikey";
     services.xserver.xkbVariant = "altgr-intl";
 
-    system.stateVersion = "22.05";
+    system.stateVersion = "22.11";
 
     time.timeZone = "US/Central";
 

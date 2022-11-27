@@ -279,6 +279,7 @@ let
     ];
 
     nixpkgs.build.programming.haskell = {}
+        # DESIGN: 2022-11-26: ghc92/ghc925 not building
         // (np.hs.fromPackages "unstable" "ghc924" "ghc-events")
         // (np.hs.fromPackages "unstable" "ghc924" "haskdogs")
         // (np.hs.fromPackages "unstable" "ghc924" "hasktags")
