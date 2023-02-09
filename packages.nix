@@ -88,10 +88,6 @@ let
 
     nixpkgs.prebuilt.base.tui.all = pickHome [
         "ansifilter"
-        "aspell"
-        "aspellDicts.en"
-        "aspellDicts.en-computers"
-        "aspellDicts.en-science"
         "bzip2"
         "cachix"
         "coreutils"
@@ -102,6 +98,7 @@ let
         "file"
         "gnugrep"
         "gnupg"  # TODO: home-manager
+        "languagetool"
         "nix-diff"
         "nixfmt"
         "paperkey"
@@ -116,7 +113,11 @@ let
         "wget"
         "which"
         "yq-go"
-    ];
+    ] // {
+        aspell = np.nixpkgs-home.aspellWithDicts (d: with d; [
+            en en-computers en-science
+        ]);
+    };
 
     nixpkgs.prebuilt.base.tui.linux = np.pick { linux = "unstable"; } [
         "entr"
